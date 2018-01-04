@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plate: MyString
+  province: MyString
+  upvote: 1
+  downvote: 1
+
+two:
+  plate: MyString
+  province: MyString
+  upvote: 1
+  downvote: 1

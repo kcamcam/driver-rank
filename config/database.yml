@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: plate-rank-2_production
-  username: plate-rank-2
-  password: <%= ENV['PLATE-RANK-2_DATABASE_PASSWORD'] %>
+  username: 'Kevin Camellini'
+  password: 
+    #<%= ENV['PLATE-RANK-2_DATABASE_PASSWORD'] %>

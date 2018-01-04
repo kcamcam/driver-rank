@@ -1,0 +1,2 @@
+module LicencePLatesHelper
+end

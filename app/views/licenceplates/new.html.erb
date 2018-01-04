@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Welcome Index</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
@@ -55,9 +55,31 @@
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>Hellooooo WoooooOOOooOOOOOrrrrllldd</h1>
-  </div>
+  <h1>New License Plate</h1>
+  <%= form_with scope: :licenceplate, url: licenceplates_path, local: true do |form| %>
+    <p>
+      <%= form.label :'plate' %><br>
+      <%= form.text_field :'plate' %>
+    </p>
+
+    <p>
+      <%= form.label :province %><br>
+      <%= form.text_area :province %>
+    </p>
+
+    <p>
+      <%= form.label :upvote %><br>
+      <%= form.text_area :upvote %>
+    </p>
+
+    <p>
+      <%= form.label :downvote %><br>
+      <%= form.text_area :downvote %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
 </body>
 </html>
