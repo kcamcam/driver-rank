@@ -1,0 +1,38 @@
+<%= form_with model: @licenceplate, local: true do |form| %>
+<% if @licenceplate.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@licenceplate.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <% @licenceplate.errors.full_messages.each do |msg| %>
+      <p style="color:red;"><%= msg %></p>
+    <% end %>
+  </div>
+  <% end %>
+  <p>
+    <%= form.label :'plate' %><br>
+    <%= form.text_field :'plate' %>
+  </p>
+
+  <p>
+    <%= form.label :province %><br>
+    <%= form.text_area :province %>
+  </p>
+
+  <p>
+    <%= form.label :upvote %><br>
+    <%= link_to 'like', licenceplate_upvote_path(@licenceplate), method: :put %>
+    <h1><%=@licenceplate.id%></h1>
+  </p>
+
+  <p>
+    <%= form.label :downvote %><br>
+    <%= form.text_area :downvote %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', welcome_index_path %>
