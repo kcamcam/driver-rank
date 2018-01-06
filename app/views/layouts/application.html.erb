@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PlateRank2</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
-
+    <!-- Import Font Awesome -->
+    <script src="https://use.fontawesome.com/8f2ae3cde2.js"></script>
+    <!-- Import Materialize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Container -->
+    <div class="container">
+      <%= yield %>
+    <div>
+    <!-- End Container -->
+    <!-- Import jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Import Materialize.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>

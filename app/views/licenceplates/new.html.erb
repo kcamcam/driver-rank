@@ -2,37 +2,37 @@
 <html>
 
 <head>
-  <title>Welcome Index</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <% content_for :title, "Plate Rank |  New" %>
 </head>
 
 <body>
   <h1>New Licence Plate</h1>
   <%= form_with model: @licenceplate, local: true do |form| %>
-  <% if @licenceplate.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@licenceplate.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <% @licenceplate.errors.full_messages.each do |msg| %>
-        <p style="color:red;"><%= msg %></p>
-      <% end %>
-    </div>
+    <!-- Error Messages -->
+    <% if @licenceplate.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@licenceplate.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <% @licenceplate.errors.full_messages.each do |msg| %>
+          <p style="color:red;"><%= msg %></p>
+        <% end %>
+      </div>
     <% end %>
-    <p>
-      <%= form.label :'plate' %><br>
-      <%= form.text_field :'plate' %>
-    </p>
+    <!-- Error Messages -->
 
-    <p>
-      <%= form.label :province %><br>
-      <%= form.text_area :province %>
-    </p>
+    <!-- Form -->
+    <label for="licenceplate_plate">Plate</label><br>
+    <input type="text" name="licenceplate[plate]" />
+
+    <label for="licenceplate_province">Province</label>
+    <input type="text" name="licenceplate[province]" />
     <p>
       <%= form.submit %>
     </p>
   <% end %>
+  <!-- End -s Form -->
   <%= link_to 'Back', welcome_index_path %>
 
   <%= link_to 'Back', welcome_index_path %>
