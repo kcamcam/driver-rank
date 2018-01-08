@@ -1,0 +1,4 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<h1><%= @user.name %>, <%= @user.email %></h1>

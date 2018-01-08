@@ -16,9 +16,10 @@
     <!-- Container -->
     <div class="container">
       <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
     <div>
     <!-- End Container -->
-    
+
     <!-- Import jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Import Materialize.js -->

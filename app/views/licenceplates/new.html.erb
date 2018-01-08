@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
   <% content_for :title, "Plate Rank |  New" %>
-</head>
-
-<body>
   <h1>New Licence Plate</h1>
   <%= form_with model: @licenceplate, local: true do |form| %>
     <!-- Error Messages -->
@@ -36,5 +29,3 @@
   <%= link_to 'Back', welcome_index_path %>
 
   <%= link_to 'Back', welcome_index_path %>
-</body>
-</html>
