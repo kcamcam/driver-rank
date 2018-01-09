@@ -15,19 +15,22 @@
   </head>
 
   <body>
+    <%-# If Logged IN -%>
+    <% if logged_in? %>
     <ul id="dropdown-nav" class="dropdown-content">
       <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Settings", '#' %></li>
+      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
       <li class="divider"></li>
       <li><%= link_to "Log out", logout_path, method: :delete %></li>
     </ul>
+    <% end %>
     <nav>
       <div class="nav-wrapper">
         <%= link_to "Home", root_path, class: "brand-logo" %>
         <ul class="right hide-on-med-and-down">
         <%-# If Logged IN -%>
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
+          <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown-nav"><%= current_user.name%><i class="material-icons right">arrow_drop_down</i></a></li>
         <%-# If Not Logged IN -%>
