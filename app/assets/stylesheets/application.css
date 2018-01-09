@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/* Note to future KEVIN, this works in all files  */
+ html,body{
+   min-width: 100 vw;
+   min-height: 100 vh;
+ }
