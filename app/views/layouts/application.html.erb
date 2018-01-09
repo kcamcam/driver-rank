@@ -7,6 +7,8 @@
     <script src="https://use.fontawesome.com/8f2ae3cde2.js"></script>
     <!-- Import Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap Margin/Padding CSS -->
+    <%= stylesheet_link_tag "bootstrap-padding.css" %>
     <!-- Import Materialize.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,17 +27,22 @@
     </ul>
     <% end %>
     <nav>
-      <div class="nav-wrapper">
-        <%= link_to "Home", root_path, class: "brand-logo" %>
+      <div class="nav-wrapper blue">
+        <%= link_to (raw("Driver <strong>Rank</strong>")), root_path, class: "pl-4 brand-logo left" %>
         <ul class="right hide-on-med-and-down">
-        <%-# If Logged IN -%>
         <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
+
+          <% if current_user.admin?%>
+            <li><%= link_to "Users", users_path %></li>
+          <% end  %>
+
           <li class="dropdown">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown-nav"><%= current_user.name%><i class="material-icons right">arrow_drop_down</i></a></li>
-        <%-# If Not Logged IN -%>
+
         <% else %>
+
           <li><%= link_to "Log in", login_path %></li>
+
         <% end %>
         </ul>
       </div>
@@ -44,9 +51,9 @@
     <!-- Container -->
     <div class="container">
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
-    <div>
+    </div>
     <!-- End Container -->
+
 
     <!-- Import jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

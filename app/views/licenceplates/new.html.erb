@@ -1,5 +1,7 @@
-  <% content_for :title, "Plate Rank |  New" %>
+  <% content_for :title, "🚗 New" %>
   <h1>New Licence Plate</h1>
+  <p>If the plate already exists, you'll be taken there 🤙.</p>
+  <!-- Form -->
   <%= form_with model: @licenceplate, local: true do |form| %>
     <!-- Error Messages -->
     <% if @licenceplate.errors.any? %>
@@ -15,17 +17,24 @@
     <% end %>
     <!-- Error Messages -->
 
-    <!-- Form -->
-    <label for="licenceplate_plate">Plate</label><br>
+    <label for="licenceplate_plate">Licence Plate</label><br>
     <input type="text" name="licenceplate[plate]" />
 
-    <label for="licenceplate_province">Province</label>
-    <input type="text" name="licenceplate[province]" />
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
-  <!-- End -s Form -->
-  <%= link_to 'Back', welcome_index_path %>
-
-  <%= link_to 'Back', welcome_index_path %>
+    <label>Select Province</label>
+    <%= select_tag(:province , options_for_select([
+      ['Quebec', 1],
+      ['Ontario', 2],
+      ['Manitoba',3],
+      ['Saskatchewan',4],
+      ['Alberta',5],
+      ['British Columbia',6],
+      ['Nova Scotia',7],
+      ['Prince Edward Island',8],
+      ['New Brunswick',9],
+      ['Newfoundland',10]
+    ]), {:class => 'browser-default'}) %>
+    <%= form.submit "Submit 👍", class: "waves-effect waves-light btn-large green mt-3" %>
+    <span>&nbsp;&nbsp;</span>
+    <%= link_to "Home 🏡", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+    <% end %>
+  <!-- End Form -->

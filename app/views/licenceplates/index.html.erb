@@ -1,21 +1,22 @@
 <h1>Listing Licence Plates</h1>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Up Votes</th>
-      <th>Down Votes</th>
-    </tr>
+  <table class="striped centered responsive-table">
+    <thead>
+      <tr>
+        <th><i class="fa fa-car"></i></th>
+        <th><i class="fa fa-globe"></i></th>
+        <th><i class="fa fa-thumbs-o-up"></i></th>
+        <th><i class="fa fa-thumbs-o-down"></i></th>
+      </tr>
+    </thead>
 
     <% @licenceplates.each do |licenceplate| %>
       <tr>
-        <td><%= licenceplate.plate %></td>
-        <td><%= licenceplate.province %></td>
-        <td><%= licenceplate.upvote %></td>
-        <td><%= licenceplate.downvote %></td>
-        <td><%= link_to 'Show', licenceplate_path(licenceplate) %></td>
+        <td><%= link_to licenceplate.plate.upcase, licenceplate_path(licenceplate) %></td>
+        <td><%= licenceplate.province.titleize %></td>
+        <td><%= licenceplate.get_likes.size %></td>
+        <td><%= licenceplate.get_downvotes.size %></td>
         <!-- <td><%= link_to 'Edit', edit_licenceplate_path(licenceplate) %></td> -->
       </tr>
     <% end %>
-    <%= link_to 'Home', welcome_index_path %>
   </table>
+  <%= link_to "Home 🏡", welcome_index_path, class: "waves-effect waves-light btn-large blue", :method => :get %>

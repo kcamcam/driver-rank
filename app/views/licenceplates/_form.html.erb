@@ -19,18 +19,6 @@
     <%= form.label :province %><br>
     <%= form.text_area :province %>
   </p>
-
-  <p>
-    <%= form.label :upvote %><br>
-    <%= link_to 'like', licenceplate_upvote_path(@licenceplate), method: :put %>
-    <h1><%=@licenceplate.id%></h1>
-  </p>
-
-  <p>
-    <%= form.label :downvote %><br>
-    <%= form.text_area :downvote %>
-  </p>
-
   <p>
     <%= form.submit %>
   </p>
