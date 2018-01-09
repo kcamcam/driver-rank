@@ -10,7 +10,15 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.fields_for :spec do |s| %>
+        <%= s.check_box :remember_me %>
+        <%= s.label :remember_me %>
+      <% end %>
+      <br /><br />
+
+      <%= button_tag(type: 'submit', class: "btn waves-effect waves-light") do %>
+        Login<i class="material-icons right">send</i>
+      <% end %>
     <% end %>
 
     <p>New user? <%= link_to "Sign up now!", users_new_path %></p>
