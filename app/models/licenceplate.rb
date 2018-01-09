@@ -1,4 +1,5 @@
 class Licenceplate < ApplicationRecord
+  acts_as_votable
   validates :plate, presence: true,
                     uniqueness: true,
                     length: { in: 6..7 },

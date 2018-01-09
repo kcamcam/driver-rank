@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Encrpy user passwords in database
 gem 'bcrypt',         '3.1.11'
+
+# Voting system
+gem 'acts_as_votable', '~> 0.11.1'

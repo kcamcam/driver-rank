@@ -24,9 +24,9 @@ class LicenceplatesController < ApplicationController
       render 'edit'
     end
 
-    def upvote
-      @licenceplate.increment!(:upvote)
-    end
+    # def upvote
+    #   @licenceplate.increment!(:upvote)
+    # end
 
   end
 
@@ -43,13 +43,15 @@ class LicenceplatesController < ApplicationController
 
   def upvote
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
-    @licenceplate.increment!(:upvote)
+    # @licenceplate.increment!(:upvote)
+    @licenceplate.upvote_from current_user
     redirect_to @licenceplate
   end
 
   def downvote
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
-    @licenceplate.increment!(:downvote)
+    # @licenceplate.increment!(:downvote)
+    @licenceplate.downvote_from current_user
     redirect_to @licenceplate
   end
 

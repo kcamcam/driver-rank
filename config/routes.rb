@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :licenceplates do
-    put :upvote
     put :downvote
+    put :upvote
   end
   resources :users
   root 'welcome#index'
