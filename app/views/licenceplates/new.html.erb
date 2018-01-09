@@ -1,6 +1,6 @@
   <% content_for :title, "🚗 New" %>
   <h1>New Licence Plate</h1>
-  <p>If the plate already exists, you'll be taken there 🤙.</p>
+  <p>If the licence plate already exists, you'll be taken there 🤙.</p>
   <!-- Form -->
   <%= form_with model: @licenceplate, local: true do |form| %>
     <!-- Error Messages -->
@@ -20,19 +20,19 @@
     <label for="licenceplate_plate">Licence Plate</label><br>
     <input type="text" name="licenceplate[plate]" />
 
-    <label>Select Province</label>
-    <%= select_tag(:province, options_for_select([
-      ['Quebec', "Quebec"],
-      ['Ontario', "Ontario"],
-      ['Manitoba',"Manitoba"],
-      ['Saskatchewan',"Saskatchewan"],
-      ['Alberta', "Alberta"],
-      ['British Columbia', "British Columbia"],
-      ['Nova Scotia', "Nova Scotia"],
-      ['Prince Edward Island', "Prince Edward Island"],
-      ['New Brunswick', "New Brunswick"],
-      ['Newfoundland', "Newfoundland"]
-    ]), {:class => 'browser-default'}) %>
+    <label>Province</label>
+    <select name="licenceplate[province]" class="browser-default">
+      <option value="Province">Please select</option>
+      <option value="Quebec" selected="selected">Quebec</option>
+      <option value="Ontario">Ontario</option>
+      <option value="Manitoba">Manitoba</option>
+      <option value="Saskatchewan">Saskatchewan</option>
+      <option value="British Columbia">British Columbia</option>
+      <option value="Nova Scotia">Nova Scotia</option>
+      <option value="Prince Edward Island">Prince Edward Island</option>
+      <option value="New Brunswick">New Brunswick</option>
+      <option value="Newfoundland">Newfoundland</option>
+    </select>
     <%= form.submit "Submit 👍", class: "waves-effect waves-light btn-large green mt-3" %>
     <span>&nbsp;&nbsp;</span>
     <%= link_to "Home 🏡", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>

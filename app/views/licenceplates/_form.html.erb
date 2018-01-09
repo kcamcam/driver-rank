@@ -11,16 +11,32 @@
   </div>
   <% end %>
   <p>
-    <%= form.label :'plate' %><br>
-    <%= form.text_field :'plate' %>
+    <label for="licenceplate_plate" class="active">Plate</label>
+    <input type="text" value="<%= @licenceplate.plate.upcase %>" name="licenceplate[plate]">
   </p>
 
   <p>
-    <%= form.label :province %><br>
-    <%= form.text_area :province %>
+    <label>Province</label>
+    <select name="licenceplate[province]" class="browser-default">
+      <option value="Province">Please select</option>
+      <option value="Quebec">Quebec</option>
+      <option value="Ontario">Ontario</option>
+      <option value="Manitoba">Manitoba</option>
+      <option value="Saskatchewan">Saskatchewan</option>
+      <option value="British Columbia">British Columbia</option>
+      <option value="Nova Scotia">Nova Scotia</option>
+      <option value="Prince Edward Island">Prince Edward Island</option>
+      <option value="New Brunswick">New Brunswick</option>
+      <option value="Newfoundland">Newfoundland</option>
+    </select>
   </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <%= form.submit "Save changes 👌", class: "waves-effect waves-light btn-large green mt-3" %>
+  <span>&nbsp;&nbsp;</span>
+  <%= link_to '👈 Back', welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3" %>
+  <% if current_user.admin?%>
+    <span>&nbsp;&nbsp;</span>
+    <%= link_to "Delete 🤚", @licenceplate, method: :delete,
+                                  data: { confirm: "You sure?" },
+                                  class: "waves-effect waves-light btn-large red mt-3" %>
+  <% end  %>
 <% end %>
-<%= link_to 'Back', welcome_index_path %>

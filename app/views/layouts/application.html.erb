@@ -20,15 +20,15 @@
     <%-# If Logged IN -%>
     <% if logged_in? %>
     <ul id="dropdown-nav" class="dropdown-content">
-      <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <li><%= link_to "👤 Profile", current_user %></li>
+      <li><%= link_to "✏️ Edit Profile", edit_user_path(current_user) %></li>
       <li class="divider"></li>
-      <li><%= link_to "Log out", logout_path, method: :delete %></li>
+      <li><%= link_to "🔓 Log out", logout_path, method: :delete %></li>
     </ul>
     <% end %>
     <nav>
       <div class="nav-wrapper blue">
-        <%= link_to (raw("Driver <strong>Rank</strong>")), root_path, class: "pl-4 brand-logo left" %>
+        <%= link_to (raw("🚘 Driver <strong>Rank</strong>")), root_path, class: "pl-4 brand-logo left" %>
         <ul class="right hide-on-med-and-down">
         <% if logged_in? %>
 
@@ -37,7 +37,12 @@
           <% end  %>
 
           <li class="dropdown">
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown-nav"><%= current_user.name%><i class="material-icons right">arrow_drop_down</i></a></li>
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown-nav">
+              <%= current_user.name%>
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
 
         <% else %>
 

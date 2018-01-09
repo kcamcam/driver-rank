@@ -1,6 +1,6 @@
-<div class="row section" style="padding-top: 100px;">
+<% content_for :title, "🚗 Log in" %>
+<div class="row section">
   <div class="col m8 offset-m2">
-    <% provide(:title, "Log in") %>
     <h1>Log in</h1>
     <%= form_for(:session, url: login_path) do |f| %>
 
@@ -11,13 +11,13 @@
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.fields_for :spec do |s| %>
-        <%= s.check_box :remember_me %>
+        <%= s.check_box :remember_me, style: "border-color: blue;" %>
         <%= s.label :remember_me %>
       <% end %>
       <br /><br />
 
-      <%= button_tag(type: 'submit', class: "btn waves-effect waves-light") do %>
-        Login<i class="material-icons right">send</i>
+      <%= button_tag(type: 'submit', class: "btn waves-effect waves-light green") do %>
+        Login 🔐
       <% end %>
     <% end %>
 

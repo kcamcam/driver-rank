@@ -31,6 +31,7 @@ class LicenceplatesController < ApplicationController
   def create
     @licenceplate = Licenceplate.new(licenceplate_params)
     if @licenceplate.save
+      @licenceplate.plate.upcase!
       redirect_to @licenceplate
     elsif @licenceplate.plate != "" && Licenceplate.exists?()
         @existingplate = Licenceplate.find_by(plate: @licenceplate.plate)
@@ -41,17 +42,34 @@ class LicenceplatesController < ApplicationController
 
   end
 
+  def destroy
+    Licenceplate.find(params[:id]).destroy
+    flash[:success] = "Licenceplate deleted"
+    redirect_to licenceplates_path
+  end
+
   def upvote
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
     # @licenceplate.increment!(:upvote)
-    @licenceplate.upvote_from current_user
+    if current_user.admin
+      @licenceplate.vote_by voter: current_user, :duplicate => true
+      @licenceplate.upvote_from current_user
+    else
+      @licenceplate.upvote_from current_user
+    end
+
     redirect_to @licenceplate
   end
 
   def downvote
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
     # @licenceplate.increment!(:downvote)
-    @licenceplate.downvote_from current_user
+    if current_user.admin
+      @licenceplate.vote_by voter: current_user, :duplicate => true
+      @licenceplate.downvote_from current_user
+    else
+      @licenceplate.downvote_from current_user
+    end
     redirect_to @licenceplate
   end
 

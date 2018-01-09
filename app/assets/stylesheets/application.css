@@ -15,13 +15,28 @@
  */
 
 /* Note to future KEVIN, this works in all files  */
- html,body{
-   min-width: 100 vw;
-   min-height: 100 vh;
- }
+html,body{
+ min-width: 100 vw;
+ min-height: 100 vh;
+}
 
- .debug_dump{
-   border-radius: 20px;
-   background-color: lightgrey;
-   padding: 20px 20px;
- }
+.debug_dump{
+ border-radius: 20px;
+ background-color: lightgrey;
+ padding: 20px 20px;
+}
+
+/* Change Color of Checkbox on Log In Page  */
+[type="checkbox"]+label:before, [type="checkbox"]:not(.filled-in)+label:after{
+  border-color: rgb(72,149,236);
+}
+[type="checkbox"]:checked+label:before{
+  border-right: 2px solid rgb(72,149,236);
+  border-bottom: 2px solid rgb(72,149,236);
+}
+.btn-floating.btn-large{
+  width: 70px;
+  height: 70px;
+  font-size: 2em;
+  padding-top: 10px;
+}

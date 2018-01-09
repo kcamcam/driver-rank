@@ -1,4 +1,4 @@
-<% provide(:title, "Edit user") %>
+<% content_for :title, "🚗 "+@user.name %>
 <h1>Update your profile</h1>
 <div class="row section">
   <div class="col m8 offset-m2">
@@ -17,7 +17,9 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes 👌", class: "waves-effect waves-light btn-large green mt-3" %>
+      <span>&nbsp;&nbsp;</span>
+      <%= link_to "Back 👈", current_user, class: "waves-effect waves-light btn-large red mt-3" %>
     <% end %>
   </div>
 </div>
