@@ -21,17 +21,17 @@
     <input type="text" name="licenceplate[plate]" />
 
     <label>Select Province</label>
-    <%= select_tag(:province , options_for_select([
-      ['Quebec', 1],
-      ['Ontario', 2],
-      ['Manitoba',3],
-      ['Saskatchewan',4],
-      ['Alberta',5],
-      ['British Columbia',6],
-      ['Nova Scotia',7],
-      ['Prince Edward Island',8],
-      ['New Brunswick',9],
-      ['Newfoundland',10]
+    <%= select_tag(:province, options_for_select([
+      ['Quebec', "Quebec"],
+      ['Ontario', "Ontario"],
+      ['Manitoba',"Manitoba"],
+      ['Saskatchewan',"Saskatchewan"],
+      ['Alberta', "Alberta"],
+      ['British Columbia', "British Columbia"],
+      ['Nova Scotia', "Nova Scotia"],
+      ['Prince Edward Island', "Prince Edward Island"],
+      ['New Brunswick', "New Brunswick"],
+      ['Newfoundland', "Newfoundland"]
     ]), {:class => 'browser-default'}) %>
     <%= form.submit "Submit 👍", class: "waves-effect waves-light btn-large green mt-3" %>
     <span>&nbsp;&nbsp;</span>
