@@ -22,19 +22,18 @@
 
     <label>Province</label>
     <select name="licenceplate[province]" class="browser-default">
-      <option value="Province">Please select</option>
       <option value="Quebec" selected="selected">Quebec</option>
-      <option value="Ontario">Ontario</option>
-      <option value="Manitoba">Manitoba</option>
-      <option value="Saskatchewan">Saskatchewan</option>
-      <option value="British Columbia">British Columbia</option>
-      <option value="Nova Scotia">Nova Scotia</option>
-      <option value="Prince Edward Island">Prince Edward Island</option>
-      <option value="New Brunswick">New Brunswick</option>
-      <option value="Newfoundland">Newfoundland</option>
+      <option value="Ontario" disabled>Ontario</option>
+      <option value="Manitoba" disabled>Manitoba</option>
+      <option value="Saskatchewan" disabled>Saskatchewan</option>
+      <option value="British Columbia" disabled>British Columbia</option>
+      <option value="Nova Scotia" disabled>Nova Scotia</option>
+      <option value="Prince Edward Island" disabled>Prince Edward Island</option>
+      <option value="New Brunswick" disabled>New Brunswick</option>
+      <option value="Newfoundland" disabled>Newfoundland</option>
     </select>
-    <%= form.submit "Submit 👍", class: "waves-effect waves-light btn-large green mt-3" %>
+    <%= form.submit "👍 Submit", class: "waves-effect waves-light btn-large green mt-3" %>
     <span>&nbsp;&nbsp;</span>
-    <%= link_to "Home 🏡", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+    <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
     <% end %>
   <!-- End Form -->

@@ -1,3 +1,74 @@
 // Place all the styles related to the Licenceplates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//licence plate border
+#licence_border{
+  color: #283593;
+  border: 8px solid #283593;
+  border-radius: 10px;
+}
+//the screw holders inline with province and text
+#plate-province, #licence_border div{
+  display: inline-block;
+}
+//The licence plate nubmer
+#licence_border h1{
+  font-family: 'LicensePlate';
+  font-size: 9em;
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+// The screw holes
+#licence_border div{
+  background-color: #283593;
+  border-right: 1px solid #38678B;
+  border-bottom: 1px solid #38678B;
+  border-left: 1px solid #24435B;
+  border-top: 1px solid #24435B;
+  border-radius:15px;
+  line-height: 10px;
+  width: 30px;
+}
+// Text shadow on all (embossed)
+#licence_border h1,#licence_border h5{
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+}
+// upvote and downvote count
+#votes{
+  padding-top: 10px;
+}
+
+// upvote and downvote buttons
+.btn-floating.btn-large{
+  width: 70px;
+  height: 70px;
+  font-size: 2em;
+  padding-top: 10px;
+}
+
+/*========== Mobile Fixes ==========*/
+/* Big Ass Screens */
+@media (max-width: 991px){
+    .logo{
+        width: 300px;
+    }
+}
+/* iPhone 6 */
+@media (max-width: 768px){
+  #licence_border h1{
+    font-size: 7em;
+  }
+  #licence_border h5{
+    font-size: 1.3em;
+  }
+}
+/* iPhone 5, for ghetto people like justin*/
+@media (max-width: 320px){
+  #licence_border h1{
+    font-size: 5.5em;
+  }
+  #licence_border h5{
+    font-size: 1.3em;
+  }
+}

@@ -50,27 +50,24 @@ class LicenceplatesController < ApplicationController
 
   def upvote
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
-    # @licenceplate.increment!(:upvote)
-    if current_user.admin
+    if !current_user.nil? && current_user.admin
       @licenceplate.vote_by voter: current_user, :duplicate => true
       @licenceplate.upvote_from current_user
+      redirect_to @licenceplate
     else
-      @licenceplate.upvote_from current_user
+      redirect_to login_url
     end
-
-    redirect_to @licenceplate
   end
 
   def downvote
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
-    # @licenceplate.increment!(:downvote)
-    if current_user.admin
+    if !current_user.nil? && current_user.admin
       @licenceplate.vote_by voter: current_user, :duplicate => true
       @licenceplate.downvote_from current_user
+      redirect_to @licenceplate
     else
-      @licenceplate.downvote_from current_user
+      redirect_to login_url
     end
-    redirect_to @licenceplate
   end
 
   private

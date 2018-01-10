@@ -11,6 +11,10 @@
     <%= stylesheet_link_tag "bootstrap-padding.css" %>
     <!-- Import Materialize.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Import jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Import Materialize.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -28,18 +32,17 @@
     <% end %>
     <nav>
       <div class="nav-wrapper blue">
-        <%= link_to (raw("🚘 Driver <strong>Rank</strong>")), root_path, class: "pl-4 brand-logo left" %>
-        <ul class="right hide-on-med-and-down">
+        <%= link_to (raw("🚘 Driver <strong>Rank</strong><small> - beta</small>")), root_path, class: "pl-4 brand-logo left" %>
+        <ul class="right">
         <% if logged_in? %>
 
           <% if current_user.admin?%>
-            <li><%= link_to "Users", users_path %></li>
+            <li class="hide-on-med-and-down"><%= link_to "Users", users_path %></li>
           <% end  %>
 
-          <li class="dropdown">
           <li>
-            <a class="dropdown-button" href="#!" data-activates="dropdown-nav">
-              <%= current_user.name%>
+            <a class="dropdown-button" href="#" data-activates="dropdown-nav">
+              <span class="hide-on-med-and-down"><%= current_user.name%></span>
               <i class="material-icons right">arrow_drop_down</i>
             </a>
           </li>
@@ -54,15 +57,26 @@
     </nav>
 
     <!-- Container -->
-    <div class="container">
-      <%= yield %>
-    </div>
-    <!-- End Container -->
+    <main class=" grey lighten-4">
+      <div class="container py-5">
+        <%= yield %>
+      </div>
+    </main>
+    <!-- /.Container -->
 
-
-    <!-- Import jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- Import Materialize.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Footer -->
+    <footer class="py-4 blue darken-1">
+        <div class="container">
+          <div class="row py-3 my-0">
+            <div class="col s6">
+              <a class="white-text" href="https://kcamel.com">&copy;Kevin Camellini <span id="yearfooter"></span></a>
+            </div>
+            <div class="col s6 right-align">
+            </div>
+          </div>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /.Footer     -->
   </body>
 </html>

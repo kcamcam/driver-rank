@@ -11,7 +11,9 @@
 
 <%= link_to "✏️ Edit Profile", edit_user_path(current_user), class: "waves-effect waves-light btn-large green mt-3" %>
 <span>&nbsp;&nbsp;</span>
-<%= link_to "Rankings 🚙", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+<%= link_to "🏁 View Rankings", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+<span>&nbsp;&nbsp;</span>
+<%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
 <% if current_user.admin? && !current_user?(@user) %>
   <span>&nbsp;&nbsp;</span>
   <%= link_to "Delete 🤚", @user, method: :delete,

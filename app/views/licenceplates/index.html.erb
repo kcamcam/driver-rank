@@ -1,6 +1,6 @@
 <% content_for :title, "🚘 All Rankings" %>
 
-  <h1><a href="https://instantcena.ca">All Rankings</a></h1>
+  <h2><a href="https://instantcena.ca">All Rankings</a></h2>
 
   <table class="striped centered responsive-table">
     <thead>
@@ -9,7 +9,7 @@
         <th><h4>🇨🇦</h4></th>
         <th><h4>👍</h4></th>
         <th><h4>👎</h4></th>
-        <% if current_user.admin?%>
+        <% if !current_user.nil? && current_user.admin?%>
           <th><h4>🛑</h4></th>
         <% end %>
       </tr>
@@ -18,10 +18,10 @@
     <% @licenceplates.each do |licenceplate| %>
       <tr>
         <td><%= link_to licenceplate.plate.upcase, licenceplate_path(licenceplate) %></td>
-        <td><%= licenceplate.province %></td>
+        <td><%= licenceplate.province.capitalize %></td>
         <td><%= licenceplate.get_likes.size %></td>
         <td><%= licenceplate.get_downvotes.size %></td>
-        <% if current_user.admin?%>
+        <% if !current_user.nil? && current_user.admin?%>
           <td><%= link_to "Delete 🤚", licenceplate, method: :delete,
                                                           data: { confirm: "You sure?" }%>
           </td>
@@ -30,6 +30,6 @@
     <% end %>
   </table>
 
-  <%= link_to "Rate Someone 🚗", new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
+  <%= link_to "🚘 Rate Someone", new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
   <span>&nbsp;&nbsp;</span>
-  <%= link_to "Home 🏡", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+  <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
