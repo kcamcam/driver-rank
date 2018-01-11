@@ -55,11 +55,11 @@
   margin-right: 15%;
 }
 // Text shadow on all text(embossed)
-#licence_border h1,#licence_border h5, select{
+#licence_border h1,#licence_border h5, select, #plate-province{
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
 }
-select{
+select,#plate-province{
   width: 30%;
   display: inline-block !important;
   background-color: rgb(245,245,245);
@@ -103,7 +103,7 @@ select{
 /* Big Ass Screens - 8 Plus */
 @media (max-width: 991px){
   // Scre hole alignment fixes
-  select{
+  select, #plate-province{
     margin-left: 15%;
     margin-right: 15%;
   }
@@ -121,7 +121,7 @@ select{
     font-size: 1.3em;
   }
   // Scre hole alignment fixes
-  select{
+  select, #plate-province{
     margin-left: 15%;
     margin-right: 15%;
   }
