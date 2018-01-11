@@ -1338,19 +1338,20 @@
     margin-left: auto !important;
   }
 }
-/* line 5, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+@font-face {
+  font-family: 'LicensePlate';
+  src: url(/assets/LicensePlate-2256148f42a64effedffd122993c52ac5389e52bfc5b299811952e5e848a043d.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #licence_border {
   color: #283593;
   border: 8px solid #283593;
   border-radius: 10px;
 }
 
-/* line 11, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
-#plate-province, #licence_border div {
-  display: inline-block;
-}
-
-/* line 15, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 18, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #licence_border h1 {
   font-family: 'LicensePlate';
   font-size: 9em;
@@ -1359,7 +1360,7 @@
   white-space: nowrap;
 }
 
-/* line 22, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 25, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #plate-input {
   font-family: 'LicensePlate';
   font-size: 1em;
@@ -1369,14 +1370,19 @@
   white-space: nowrap;
 }
 
-/* line 30, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 33, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #plate-input:focus {
   border-bottom: none;
   box-shadow: none;
 }
 
-/* line 35, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
-#licence_border div {
+/* line 38, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#plate-province-text, #drill-hole {
+  display: inline-block;
+}
+
+/* line 42, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#drill-hole {
   background-color: #283593;
   border-right: 1px solid #38678B;
   border-bottom: 1px solid #38678B;
@@ -1387,18 +1393,35 @@
   width: 30px;
 }
 
-/* line 46, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 53, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#plate-province-text {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* line 58, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #licence_border h1, #licence_border h5 {
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
 }
 
-/* line 51, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 62, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+select {
+  width: 30%;
+  display: inline-block !important;
+  background-color: whitesmoke;
+  text-align-last: center;
+  font-size: 1.2em;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+/* line 72, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #votes {
   padding-top: 10px;
 }
 
-/* line 56, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 77, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 .btn-floating.btn-large {
   width: 70px;
   height: 70px;
@@ -1406,13 +1429,13 @@
   padding-top: 10px;
 }
 
-/* line 64, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 85, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #canvas {
   height: 50px;
   background-color: whitesmoke;
 }
 
-/* line 68, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+/* line 89, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
 #zoomzoom {
   font-size: 40px;
   width: 20px;
@@ -1430,36 +1453,48 @@
 /* Big Ass Screens */
 /* iPhone 6 */
 @media (max-width: 768px) {
-  /* line 86, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  /* line 107, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
   #licence_border h1 {
     font-size: 7em;
   }
 
-  /* line 89, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  /* line 110, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
   #licence_border h5 {
     font-size: 1.3em;
+  }
+
+  /* line 114, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  select {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  /* line 118, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #plate-province-text {
+    margin-left: 15%;
+    margin-right: 15%;
   }
 }
 /* iPhone 5, for ghetto people like justin*/
 @media (max-width: 320px) {
-  /* line 95, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  /* line 125, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
   #licence_border h1 {
     font-size: 5.5em;
   }
 
-  /* line 98, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  /* line 128, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
   #licence_border h5 {
     font-size: 1.3em;
   }
 }
 /* XL - Big Ass Screens */
 @media (min-width: 991px) {
-  /* line 104, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  /* line 134, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
   #licence_border h1 {
     font-size: 10em;
   }
 
-  /* line 107, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  /* line 137, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
   #licence_border h5 {
     font-size: 1.3em;
   }
@@ -1518,14 +1553,6 @@ main{
   border-right: 2px solid rgb(72,149,236);
   border-bottom: 2px solid rgb(72,149,236);
 }
-
-@font-face {
-  font-family: 'LicensePlate';
-  src: url('LicensePlate.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Change lock on hover */
 #logout-emoji:hover span {
   display:none

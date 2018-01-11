@@ -1,22 +1,18 @@
 // Place all the styles related to the Licenceplates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//licence plate border
+
 @font-face {
   font-family: 'LicensePlate';
   src: font-url('LicensePlate.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-
+//licence plate border
 #licence_border{
   color: #283593;
   border: 8px solid #283593;
   border-radius: 10px;
-}
-//the screw holders inline with province and text
-#plate-province, #licence_border div{
-  display: inline-block;
 }
 //The licence plate nubmer
 #licence_border h1{
@@ -38,8 +34,12 @@
   border-bottom: none;
    box-shadow: none;
 }
+// Screw holders inline with province and bttomtext
+#plate-province-text, #drill-hole{
+  display: inline-block;
+}
 // The screw holes
-#licence_border div{
+#drill-hole{
   background-color: #283593;
   border-right: 1px solid #38678B;
   border-bottom: 1px solid #38678B;
@@ -49,10 +49,24 @@
   line-height: 10px;
   width: 30px;
 }
-// Text shadow on all (embossed)
-#licence_border h1,#licence_border h5{
+
+#plate-province-text{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+// Text shadow on all text(embossed)
+#licence_border h1,#licence_border h5, select{
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+}
+select{
+  width: 30%;
+  display: inline-block !important;
+  background-color: rgb(245,245,245);
+  text-align-last:center;
+  font-size: 1.3em;
+  margin-left: 12%;
+  margin-right: 12%;
 }
 // upvote and downvote count
 #votes{
@@ -86,8 +100,18 @@
 }
 
 /*========== Mobile Fixes ==========*/
-/* Big Ass Screens */
-@media (max-width: 991px){}
+/* Big Ass Screens - 8 Plus */
+@media (max-width: 991px){
+  // Scre hole alignment fixes
+  select{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  #plate-province-text{
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+}
 /* iPhone 6 */
 @media (max-width: 768px){
   #licence_border h1{
@@ -95,6 +119,15 @@
   }
   #licence_border h5{
     font-size: 1.3em;
+  }
+  // Scre hole alignment fixes
+  select{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  #plate-province-text{
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 /* iPhone 5, for ghetto people like justin*/

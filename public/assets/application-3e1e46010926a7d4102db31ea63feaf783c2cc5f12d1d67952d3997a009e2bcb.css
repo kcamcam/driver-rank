@@ -1338,6 +1338,180 @@
     margin-left: auto !important;
   }
 }
+@font-face {
+  font-family: 'LicensePlate';
+  src: url(/assets/LicensePlate-2256148f42a64effedffd122993c52ac5389e52bfc5b299811952e5e848a043d.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#licence_border {
+  color: #283593;
+  border: 8px solid #283593;
+  border-radius: 10px;
+}
+
+/* line 18, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#licence_border h1 {
+  font-family: 'LicensePlate';
+  font-size: 9em;
+  margin-top: 7px;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* line 25, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#plate-input {
+  font-family: 'LicensePlate';
+  font-size: 1em;
+  height: 1em;
+  border-bottom: none;
+  margin: 0 0;
+  white-space: nowrap;
+}
+
+/* line 33, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#plate-input:focus {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* line 38, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#plate-province-text, #drill-hole {
+  display: inline-block;
+}
+
+/* line 42, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#drill-hole {
+  background-color: #283593;
+  border-right: 1px solid #38678B;
+  border-bottom: 1px solid #38678B;
+  border-left: 1px solid #24435B;
+  border-top: 1px solid #24435B;
+  border-radius: 15px;
+  line-height: 10px;
+  width: 30px;
+}
+
+/* line 53, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#plate-province-text {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* line 58, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#licence_border h1, #licence_border h5, select {
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+}
+
+/* line 62, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+select {
+  width: 30%;
+  display: inline-block !important;
+  background-color: whitesmoke;
+  text-align-last: center;
+  font-size: 1.3em;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+/* line 72, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#votes {
+  padding-top: 10px;
+}
+
+/* line 77, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+.btn-floating.btn-large {
+  width: 70px;
+  height: 70px;
+  font-size: 2em;
+  padding-top: 10px;
+}
+
+/* line 85, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#canvas {
+  height: 50px;
+  background-color: whitesmoke;
+}
+
+/* line 89, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+#zoomzoom {
+  font-size: 40px;
+  width: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 25px;
+  transform: rotateY(180deg);
+  transition: margin 2s;
+  -moz-transition: margin 2s;
+  -webkit-transition: margin 2s;
+  -o-transition: margin 2s;
+}
+
+/*========== Mobile Fixes ==========*/
+/* Big Ass Screens - 8 Plus */
+@media (max-width: 991px) {
+  /* line 106, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  select {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  /* line 110, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #plate-province-text {
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+}
+/* iPhone 6 */
+@media (max-width: 768px) {
+  /* line 117, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #licence_border h1 {
+    font-size: 7em;
+  }
+
+  /* line 120, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #licence_border h5 {
+    font-size: 1.3em;
+  }
+
+  /* line 124, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  select {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  /* line 128, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #plate-province-text {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+/* iPhone 5, for ghetto people like justin*/
+@media (max-width: 320px) {
+  /* line 135, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #licence_border h1 {
+    font-size: 5.5em;
+  }
+
+  /* line 138, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #licence_border h5 {
+    font-size: 1.3em;
+  }
+}
+/* XL - Big Ass Screens */
+@media (min-width: 991px) {
+  /* line 144, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #licence_border h1 {
+    font-size: 10em;
+  }
+
+  /* line 147, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/licenceplates.scss */
+  #licence_border h5 {
+    font-size: 1.3em;
+  }
+}
 /* line 4, /Users/kcamel/Documents/Github/plate-rank-2/app/assets/stylesheets/users.scss */
 #error_explanation {
   color: red;
@@ -1368,13 +1542,16 @@
 
  */
 
-/* Note to future KEVIN, this works in all files  */
 
-html,body{
- min-width: 100 vw;
- min-height: 100 vh;
+html, body {
+  min-width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-
+main{
+  flex: 1 0 auto; /* fixes footer to the bottom of the page */
+}
 .debug_dump{
  border-radius: 20px;
  background-color: lightgrey;
@@ -1389,20 +1566,18 @@ html,body{
   border-right: 2px solid rgb(72,149,236);
   border-bottom: 2px solid rgb(72,149,236);
 }
-.btn-floating.btn-large{
-  width: 70px;
-  height: 70px;
-  font-size: 2em;
-  padding-top: 10px;
+/* Change lock on hover */
+#logout-emoji:hover span {
+  display:none
+}
+#logout-emoji:hover:before {
+  content:"🔓"
 }
 
-@font-face {
-  font-family: 'LicensePlate';
-  src: font-url('LicensePlate.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+/* Change lock on hover */
+#login-emoji:hover span {
+  display:none
 }
-#licence_border{
-  font-family: 'LicensePlate';
-  color:blue;
+#login-emoji:hover:before {
+  content:"Login 🔒"
 }

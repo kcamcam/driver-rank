@@ -6,9 +6,9 @@
       <div class="col s12 m8 offset-m2">
         <div class="center-align z-depth-2"  id="licence_border">
 
-          <div>&nbsp;&nbsp;</div>
-          <span>&nbsp;</span>
-          <select name="licenceplate[province]" class="browser-default" style="width: 30%; display: inline-block;">
+          <div id="drill-hole">&nbsp;&nbsp;</div><!--  the drill holes -->
+          <!-- Province Select -->
+          <select name="licenceplate[province]" class="browser-default">
             <option value="Quebec" selected="selected">Quebec</option>
             <option value="Ontario" disabled>Ontario</option>
             <option value="Manitoba" disabled>Manitoba</option>
@@ -19,14 +19,18 @@
             <option value="New Brunswick" disabled>New Brunswick</option>
             <option value="Newfoundland" disabled>Newfoundland</option>
           </select>
-          <span>&nbsp;</span>
-          <div>&nbsp;&nbsp;</div>
+          <!-- ./ Province Select -->
+          <div id="drill-hole">&nbsp;&nbsp;</div><!--  the drill holes -->
 
-          <h1><input onkeyup="formatInput();" id="plate-input" class="center-align" type="text" name="licenceplate[plate]" placeholder="B01 AAA" maxlength="7"/></h1>
+          <!-- Licence Plate Input -->
+          <h1>
+            <input onkeyup="formatInput();" id="plate-input" class="center-align" type="text" name="licenceplate[plate]" placeholder="B01 AAA" maxlength="7"/>
+          </h1>
+          <!-- ./Licence Plate Input -->
 
-          <div>&nbsp;&nbsp;</div>
-          <h5 id="plate-province">&nbsp;Je me souviens&nbsp;</h5>
-          <div>&nbsp;&nbsp;</div>
+          <div id="drill-hole">&nbsp;&nbsp;</div><!--  the drill holes -->
+          <h5 id="plate-province-text">Je me souviens</h5>
+          <div id="drill-hole">&nbsp;&nbsp;</div><!--  the drill holes -->
 
         </div>
       </div>
@@ -46,11 +50,11 @@
       <div class="row center-align">
         <div id="error_explanation">
           <h6>
-            <%= pluralize(@licenceplate.errors.count, "error") %> prohibited
-            this article from being saved:
+            <%= pluralize(@licenceplate.errors.count, "error") %> prohibited rating the licence plate.
           </h6>
+          <h5>🛑&nbsp;🔨&nbsp;⏱</h5>
           <% @licenceplate.errors.full_messages.each do |msg| %>
-            <p style="color:red;" class="center-align"><%= msg %></p>
+            <p style="color:red;" class="center-align"><%= raw msg %></p>
           <% end %>
         </div>
       </div>
