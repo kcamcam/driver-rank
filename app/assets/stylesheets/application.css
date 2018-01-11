@@ -37,14 +37,6 @@ main{
   border-right: 2px solid rgb(72,149,236);
   border-bottom: 2px solid rgb(72,149,236);
 }
-
-@font-face {
-  font-family: 'LicensePlate';
-  src: url('LicensePlate.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Change lock on hover */
 #logout-emoji:hover span {
   display:none

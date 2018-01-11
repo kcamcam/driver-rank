@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //licence plate border
+@font-face {
+  font-family: 'LicensePlate';
+  src: url(LicensePlate.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #licence_border{
   color: #283593;
   border: 8px solid #283593;
