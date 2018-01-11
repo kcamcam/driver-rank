@@ -120,10 +120,13 @@ select,#plate-province{
   #licence_border h5{
     font-size: 1.3em;
   }
-  // Scre hole alignment fixes
+  // Screw hole alignment fixes
+  select{
+    width: 40%;
+  }
   select, #plate-province{
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
   #plate-province-text{
     margin-left: 10%;
@@ -137,6 +140,18 @@ select,#plate-province{
   }
   #licence_border h5{
     font-size: 1.3em;
+  }
+  // Screw hole alignment fixes
+  select{
+    width: 45%;
+  }
+  select, #plate-province{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #plate-province-text{
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 /* XL - Big Ass Screens */

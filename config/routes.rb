@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  get 'appstore/index'
 
   get 'sessions/new'
   get 'users/new'
   get 'welcome/index'
-  get 'appstore/index'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

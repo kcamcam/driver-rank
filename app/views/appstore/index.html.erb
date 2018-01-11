@@ -1,20 +1,38 @@
-<h1>JK 😂</h1>
-<p>Not on the <strong>Appstore</strong> or <strong>Google Play Store</strong>... yet!</p>
-<p>But if you think it should, or shouldn't, give it a thumbs up or thumbs down.</p>
-<!-- Votes -->
+<!-- Row -->
 <div class="row">
-  <table class="centered" style="width: 40%;">
-    <tr>
-      <td class="py-0 pl-0"><h5 id="votes" class="green-text"><%= User.first.get_upvotes.size%></h5></td>
-      <td class="py-0 pr-0"><h5 id="votes" class="red-text"><%= @kevin.get_downvotes.size%></h5></td>
-    </tr>
-    <tr>
-      <td class="py-0 pl-0"><a class="btn-floating btn-large waves-effect waves-light green" data-method="put" href="1/upvote">👍</a></td>
-      <td class="py-0 pr-0"><a class="btn-floating btn-large waves-effect waves-light red" data-method="put" href="1/downvote">👎</a></td>
-    </tr>
-  </table>
+  <!-- ./ column -->
+  <div class="col m6">
+    <h3>JK 😂</h3>
+    <p>Not on the <strong>Appstore</strong> or <strong>Google Play Store</strong>... yet!</p>
+    <p>But if you think it should, or shouldn't, give it a thumbs up or thumbs down.</p>
+
+    <!-- Votes -->
+    <table class="centered" style="width: 40%;">
+      <tr>
+        <td class="py-0 pl-0"><h5 id="votes" class="green-text"><%= User.first.get_upvotes.size%></h5></td>
+        <td class="py-0 pr-0"><h5 id="votes" class="red-text"><%= @kevin.get_downvotes.size%></h5></td>
+      </tr>
+      <tr>
+        <td class="py-0 pl-0"><a class="btn-floating btn-large waves-effect waves-light green" data-method="put" href="appstore/1/upvote">👍</a></td>
+        <td class="py-0 pr-0"><a class="btn-floating btn-large waves-effect waves-light red" data-method="put" href="appstore/1/downvote">👎</a></td>
+      </tr>
+    </table>
+
+    <!-- ./ Votes -->
+  </div>
+  <!-- ./ column -->
+  <div class="col m6">
+    <h3> In the meantime:</h3>
+  </div>
 </div>
-<%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
-<span>&nbsp;&nbsp;</span>
-<%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
-<!-- ./ Votes -->
+<!-- ./ Row -->
+
+<!-- Row -->
+<div class="row">
+  <div class="col s12">
+    <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+    <span>&nbsp;&nbsp;</span>
+    <%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+  </div>
+</div>
+<!-- ./ Row -->
