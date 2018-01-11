@@ -1,15 +1,15 @@
 <% provide(:title, 'Driver Rank') %>
-  <h1>Welcome To Driver <strong>Rank</strong></h1>
+  <h1>Welcome To Driver <strong>Rank</strong><small style="font-size:20px;">&nbsp;beta</small></h1>
   <h5>Rate other shit💩head drivers on their driving abilities</h5>
-  <p>👎 That person who just cut you off?</p>
-  <p>👎 How about that person taking up 3 parking spots?</p>
-  <p>👎 And what about that person who never put on their indicator?</p>
+  <p>👎&nbsp;&nbsp;That person who just cut you off?</p>
+  <p>👎&nbsp;&nbsp;How about that person taking up 3 parking spots?</p>
+  <p>👎&nbsp;&nbsp;And what about that person who never put on their indicator?</p>
   <h5>Kudos to those who deserve it too</h5>
-  <p>👍 That person who let you pass infront of him?</p>
-  <p>👍 Good guy steve who helped you shovel your car out of 8 feet of snow?</p>
+  <p>👍&nbsp;&nbsp;That person who let you pass infront of him?</p>
+  <p>👍&nbsp;&nbsp;Good guy steve who helped you shovel your car out of 8 feet of snow?</p>
   <h5>Have some fun with it</h5>
-  <p>🤔 How would you rate compared to other drivers?</p>
-  <p>🤔 Compared to your friends?</p>
-  <%= link_to "🚘 Rate Someone", new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
+  <p>🤔&nbsp;&nbsp;How would you rate compared to other drivers?</p>
+  <p>🤔&nbsp;&nbsp;Compared to your friends?</p>
+  <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
   <span>&nbsp;&nbsp;</span>
-  <%= link_to "🏁 View Rankings", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+  <%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>

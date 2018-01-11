@@ -1,39 +1,60 @@
   <% content_for :title, "🚗 New" %>
-  <h1>New Licence Plate</h1>
-  <p>If the licence plate already exists, you'll be taken there 🤙.</p>
   <!-- Form -->
   <%= form_with model: @licenceplate, local: true do |form| %>
+    <!-- Licence Plate -->
+    <div class="row section">
+      <div class="col s12 m8 offset-m2">
+        <div class="center-align z-depth-2"  id="licence_border">
+
+          <div>&nbsp;&nbsp;</div>
+          <span>&nbsp;</span>
+          <select name="licenceplate[province]" class="browser-default" style="width: 30%; display: inline-block;">
+            <option value="Quebec" selected="selected">Quebec</option>
+            <option value="Ontario" disabled>Ontario</option>
+            <option value="Manitoba" disabled>Manitoba</option>
+            <option value="Saskatchewan" disabled>Saskatchewan</option>
+            <option value="British Columbia" disabled>British Columbia</option>
+            <option value="Nova Scotia" disabled>Nova Scotia</option>
+            <option value="Prince Edward Island" disabled>Prince Edward Island</option>
+            <option value="New Brunswick" disabled>New Brunswick</option>
+            <option value="Newfoundland" disabled>Newfoundland</option>
+          </select>
+          <span>&nbsp;</span>
+          <div>&nbsp;&nbsp;</div>
+
+          <h1><input onkeyup="formatInput();" id="plate-input" class="center-align" type="text" name="licenceplate[plate]" placeholder="B01 AAA" maxlength="7"/></h1>
+
+          <div>&nbsp;&nbsp;</div>
+          <h5 id="plate-province">&nbsp;Je me souviens&nbsp;</h5>
+          <div>&nbsp;&nbsp;</div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ./ Licence Plate -->
+
+    <!-- Submit & Buttons -->
+    <div class="row center-align">
+      <%= form.submit "👍 Submit", class: "waves-effect waves-light btn-large green mt-3", id: "new-plate-submit" %>
+      <span>&nbsp;&nbsp;</span>
+      <%= link_to "🏁 Rankings", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+    </div>
+    <!-- ./ Submit & Buttons -->
+
     <!-- Error Messages -->
     <% if @licenceplate.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@licenceplate.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
-        <% @licenceplate.errors.full_messages.each do |msg| %>
-          <p style="color:red;"><%= msg %></p>
-        <% end %>
+      <div class="row center-align">
+        <div id="error_explanation">
+          <h6>
+            <%= pluralize(@licenceplate.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h6>
+          <% @licenceplate.errors.full_messages.each do |msg| %>
+            <p style="color:red;" class="center-align"><%= msg %></p>
+          <% end %>
+        </div>
       </div>
     <% end %>
-    <!-- Error Messages -->
-
-    <label for="licenceplate_plate">Licence Plate</label><br>
-    <input type="text" name="licenceplate[plate]" />
-
-    <label>Province</label>
-    <select name="licenceplate[province]" class="browser-default">
-      <option value="Quebec" selected="selected">Quebec</option>
-      <option value="Ontario" disabled>Ontario</option>
-      <option value="Manitoba" disabled>Manitoba</option>
-      <option value="Saskatchewan" disabled>Saskatchewan</option>
-      <option value="British Columbia" disabled>British Columbia</option>
-      <option value="Nova Scotia" disabled>Nova Scotia</option>
-      <option value="Prince Edward Island" disabled>Prince Edward Island</option>
-      <option value="New Brunswick" disabled>New Brunswick</option>
-      <option value="Newfoundland" disabled>Newfoundland</option>
-    </select>
-    <%= form.submit "👍 Submit", class: "waves-effect waves-light btn-large green mt-3" %>
-    <span>&nbsp;&nbsp;</span>
-    <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
-    <% end %>
+    <!-- ./ Error Messages -->
+  <% end %>
   <!-- End Form -->

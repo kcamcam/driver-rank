@@ -44,3 +44,19 @@ main{
   font-weight: normal;
   font-style: normal;
 }
+
+/* Change lock on hover */
+#logout-emoji:hover span {
+  display:none
+}
+#logout-emoji:hover:before {
+  content:"🔓"
+}
+
+/* Change lock on hover */
+#login-emoji:hover span {
+  display:none
+}
+#login-emoji:hover:before {
+  content:"Login 🔒"
+}

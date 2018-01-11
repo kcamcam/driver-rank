@@ -33,9 +33,11 @@ class LicenceplatesController < ApplicationController
     if @licenceplate.save
       @licenceplate.plate.upcase!
       redirect_to @licenceplate
-    elsif @licenceplate.plate != "" && Licenceplate.exists?()
-        @existingplate = Licenceplate.find_by(plate: @licenceplate.plate)
-        redirect_to licenceplate_url(@existingplate)
+    elsif !@licenceplate.save && Licenceplate.exists?(plate: @licenceplate.plate)
+      @existingplate = Licenceplate.find_by(plate: @licenceplate.plate)
+      redirect_to licenceplate_url(@existingplate)
+    elsif !@licenceplate.save
+      render 'new'
     else
       render 'new'
     end
@@ -54,6 +56,9 @@ class LicenceplatesController < ApplicationController
       @licenceplate.vote_by voter: current_user, :duplicate => true
       @licenceplate.upvote_from current_user
       redirect_to @licenceplate
+    elsif !current_user.nil?
+      @licenceplate.upvote_from current_user
+      redirect_to @licenceplate
     else
       redirect_to login_url
     end
@@ -63,6 +68,9 @@ class LicenceplatesController < ApplicationController
     @licenceplate = Licenceplate.find(params[:licenceplate_id])
     if !current_user.nil? && current_user.admin
       @licenceplate.vote_by voter: current_user, :duplicate => true
+      @licenceplate.downvote_from current_user
+      redirect_to @licenceplate
+    elsif !current_user.nil?
       @licenceplate.downvote_from current_user
       redirect_to @licenceplate
     else

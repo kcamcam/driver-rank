@@ -1,5 +1,6 @@
-<% content_for :title, @licenceplate.plate.upcase %>
-<div class="row section">
+<% content_for :title, "🚙 "+@licenceplate.plate.upcase %>
+<!-- Licence Plate -->
+<div class="row section mb-3">
   <div class="col s12 m8 offset-m2">
     <div class="center-align z-depth-2"  id="licence_border">
 
@@ -12,10 +13,12 @@
       <div>&nbsp;&nbsp;</div>
       <h5 id="plate-province">&nbsp;Je me souviens&nbsp;</h5>
       <div>&nbsp;&nbsp;</div>
-
     </div>
   </div>
 </div>
+<!-- ./ Licence Plate -->
+
+<!-- Votes -->
 <div class="row center-align">
   <div class="col s3 m4 right-align">
     <h5 id="votes" class="green-text"><%= @licenceplate.get_upvotes.size%></h5>
@@ -30,15 +33,18 @@
     <h5 id="votes" class="red-text"><%= @licenceplate.get_downvotes.size%></h5>
   </div>
 </div>
+<!-- ./ Votes -->
+
+<!-- Nav Links -->
 <div class="row center-align">
   <%= link_to "👈  Rankings", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
   <% if !current_user.nil? && current_user.admin?%>
     <span>&nbsp;&nbsp;</span>
-    <%= link_to "✏️ Edit",  edit_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
+    <%= link_to "✏️  Edit",  edit_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
     <span>&nbsp;&nbsp;</span>
-    <%= link_to "🤚 Delete", @licenceplate, method: :delete,
+    <%= link_to "🤚  Delete", @licenceplate, method: :delete,
                                   data: { confirm: "You sure?" },
                                   class: "waves-effect waves-light btn-large red mt-3" %>
   <% end  %>
 </div>
-<!-- <td><%= link_to 'Edit', edit_licenceplate_path(@licenceplate) %></td> -->
+<!-- ./ Nav Links -->

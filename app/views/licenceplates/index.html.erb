@@ -1,35 +1,53 @@
 <% content_for :title, "🚘 All Rankings" %>
+  <!-- Row -->
+  <div class="row center-align mb-0">
+    <h2 class="center-align"><a href="https://instantcena.ca">All Rankings</a></h2>
+  </div>
+  <!-- ./Row -->
 
-  <h2><a href="https://instantcena.ca">All Rankings</a></h2>
+  <!-- Row -->
+  <div class="row center-align mb-0">
+    <!-- Table -->
+    <table class="striped centered">
+      <!-- Table Headers -->
+      <thead>
+        <tr>
+          <th><h4>🚘</h4></th>
+          <th><h4>🇨🇦</h4></th>
+          <th><h4>👍</h4></th>
+          <th><h4>👎</h4></th>
+          <% if !current_user.nil? && current_user.admin?%>
+            <th><h4>🛑</h4></th>
+          <% end %>
+        </tr>
+      </thead>
+      <!-- ./Table Headers -->
+      <!-- Table Body -->
+      <tbody>
+      <% @licenceplates.each do |licenceplate| %>
+        <tr>
+          <td><%= link_to licenceplate.plate.upcase, licenceplate_path(licenceplate) %></td>
+          <td><%= licenceplate.province.capitalize %></td>
+          <td><%= licenceplate.get_likes.size %></td>
+          <td><%= licenceplate.get_downvotes.size %></td>
+          <% if !current_user.nil? && current_user.admin?%>
+            <td><%= link_to "Delete 🤚", licenceplate, method: :delete,
+                                                            data: { confirm: "You sure?" }%>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+      <!-- ./Table Body -->
+    </table>
+    <!-- ./Table -->
+  </div>
+  <!-- ./Row -->
 
-  <table class="striped centered responsive-table">
-    <thead>
-      <tr>
-        <th><h4>🚘</h4></th>
-        <th><h4>🇨🇦</h4></th>
-        <th><h4>👍</h4></th>
-        <th><h4>👎</h4></th>
-        <% if !current_user.nil? && current_user.admin?%>
-          <th><h4>🛑</h4></th>
-        <% end %>
-      </tr>
-    </thead>
-
-    <% @licenceplates.each do |licenceplate| %>
-      <tr>
-        <td><%= link_to licenceplate.plate.upcase, licenceplate_path(licenceplate) %></td>
-        <td><%= licenceplate.province.capitalize %></td>
-        <td><%= licenceplate.get_likes.size %></td>
-        <td><%= licenceplate.get_downvotes.size %></td>
-        <% if !current_user.nil? && current_user.admin?%>
-          <td><%= link_to "Delete 🤚", licenceplate, method: :delete,
-                                                          data: { confirm: "You sure?" }%>
-          </td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
-
-  <%= link_to "🚘 Rate Someone", new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
-  <span>&nbsp;&nbsp;</span>
-  <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+  <!-- Row -->
+  <div class="row center-align pt-3 mb-0">
+    <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
+    <span>&nbsp;&nbsp;</span>
+    <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+  </div>
+  <!-- ./Row -->
