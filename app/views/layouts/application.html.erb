@@ -3,6 +3,8 @@
   <head>
     <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
+    <!-- Favicon -->
+    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
     <!-- Import Font Awesome -->
     <script src="https://use.fontawesome.com/8f2ae3cde2.js"></script>
     <!-- Import Material Icons -->
