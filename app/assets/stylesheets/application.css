@@ -52,3 +52,21 @@ main{
 #login-emoji:hover:before {
   content:"Login 🔒"
 }
+
+#footer-button{
+  width: 10em;
+  margin: 0 5px 5px 5px;
+}
+
+/*========== Mobile Fixes ==========*/
+/* iPhone 6 */
+@media (max-width: 768px){
+  #footer-button{
+  }
+}
+/* iPhone 5, for ghetto people like justin*/
+@media (max-width: 320px){
+  #footer-button{
+
+  }
+}

@@ -59,18 +59,22 @@
     <footer class="blue darken-2">
         <div class="container">
           <div class="row py-5 my-0">
-            <div class="col s7">
+            <div class="col s7 pr-0" id="signature">
               <a href="https://kcamel.com" class="white-text">
                 <i class="fa fa-chevron-left"></i>
                 <i class="fa fa-chevron-right"></i>
                 with
                 <i class="fa fa-heart"></i>
                 by
-                <span class="footer_name">Kevin Camellini</span>
+                <span class="footer_name">Kevin&nbsp;Camellini</span>
               </a>
+              <br />
+              <br/>
+              <span class="white-text">&copy;&nbsp;DriverRank <span id="yearfooter"></span></span>
             </div>
-            <div class="col s5 right-align white-text">
-              <span>&copy;&nbsp;DriverRank <span id="yearfooter"></span></span>
+            <div class="col s5 pl-0 right-align white-text">
+              <%= link_to (raw("iPhone&nbsp;<i class=\"fa fa-apple\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue" %>
+              <%= link_to (raw("Android&nbsp;<i class=\"fa fa-android\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue" %>
             </div>
           </div>
         </div>
