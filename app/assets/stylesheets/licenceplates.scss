@@ -64,6 +64,9 @@ select,#plate-province{
   display: inline-block !important;
   background-color: rgb(245,245,245);
   -webkit-appearance:none;
+  -webkit-text-align:center;
+  -webkit-text-align-last:center;
+  text-align:center;
   text-align-last:center;
   font-size: 1.3em;
   margin-left: 12%;
