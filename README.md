@@ -5,7 +5,7 @@
 Rate other shit💩head drivers on their driving 🚘  
 My first rails project   
 Deployed on Heroku  
-Runing on Rails 5.1.4
+Runing on Rails 5.1.4  
 [Materialize.css](http://materializecss.com/) for the front-end framework
 
 ### Run Locally (OS X)
