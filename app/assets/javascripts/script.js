@@ -20,13 +20,10 @@ function formatInput() {
 
 // Make the car on the new ranking form go zoom zoom
 $(function() {
-  $('#new-plate-submit').hover(function() {
-    $('#zoomzoom').css('margin-left', '25px');
+  $('#plate-input').hover(function() {
+    $('#zoomzoom').css('margin-left', '97vw');
   }, function() {
     // on mouseout, move back to oriiginal postion
-    $('#zoomzoom').css('margin-left', '97vw');
+    $('#zoomzoom').css('margin-left', '25px');
   });
 });
-function zoomzoom () {
-  $('#zoomzoom').css('margin-left', '97vw');
-}
