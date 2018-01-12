@@ -37,6 +37,7 @@
           <li><%= link_to "✏️", edit_user_path(current_user), style: "font-size: 1.3em;" %></li>
           <li><%= link_to (raw("<span>🔒</span>")), logout_path, method: :delete, style: "font-size: 1.3em;", id: "logout-emoji" %></li>
         <% else %>
+          <li><%= link_to (raw("<span>Register ✏️</span>")), users_new_path, class: "pr-0"%></li>
           <li><%= link_to (raw("<span>Login 🔓</span>")), login_path, id: "login-emoji" %></li>
         <% end %>
         </ul>
