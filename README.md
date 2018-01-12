@@ -23,5 +23,6 @@ Runing on Rails 5.1.4
   `$ rails server`
 7. Visit the site  
   `http://localhost:3000/`  
+  
 note: if you run into problems at #6 [this](https://stackoverflow.com/questions/25611004/rake-dbcreate-throws-database-does-not-exist-error-with-postgresql) helped me.
   
