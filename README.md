@@ -17,11 +17,14 @@ Runing on Rails 5.1.4
   `$ brew update; brew install postgres`  
 5. Install gems  
   `$ bundle install`
-6. Migrate the DB  
+6. Initialize the DB  
+  `$ bin/rake db:create RAILS_ENV=development`  
+  `$ bin/rake db:migrate RAILS_ENV=development`  
+7. Migrate the DB  
   `$ rails db:migrate`  
-6. Launch the server  
+8. Launch the server  
   `$ rails server`
-7. Visit the site  
+9. Visit the site  
   `http://localhost:3000/`  
   
 note: if you run into problems at #6 [this](https://stackoverflow.com/questions/25611004/rake-dbcreate-throws-database-does-not-exist-error-with-postgresql) helped me.
