@@ -1,9 +1,6 @@
 <% content_for :title, "All Rankings" %>
-  <!-- Row -->
-  <div class="row center-align mb-0">
-    <h2 class="center-align"><a href="https://instantcena.ca">All Rankings</a></h2>
-  </div>
-  <!-- ./Row -->
+
+  <h2 class="center-align hide-on-small-only"><a href="https://instantcena.ca">All Rankings</a></h2>
 
   <!-- Row -->
   <div class="row center-align mb-0">
@@ -45,7 +42,18 @@
   <!-- ./Row -->
 
   <!-- Row -->
-  <div class="row center-align pt-3 mb-0">
+  <div class="row hide-on-med-and-up">
+    <div class="col s6">
+      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3 px-3", :method => :get %>
+    </div>
+    <div class="col s6">
+      <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
+    </div>
+  </div>
+  <!-- ./Row -->
+
+  <!-- Row -->
+  <div class="row center-align hide-on-small-only">
     <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
     <span>&nbsp;&nbsp;</span>
     <%= link_to "🏡 Home", welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>

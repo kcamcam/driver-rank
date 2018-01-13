@@ -1,16 +1,27 @@
 <% provide(:title, 'Driver Rank') %>
-  <h1>Welcome To Driver&nbsp;<strong>Rank</strong><small style="font-size:20px;color:red;">&nbsp;beta</small></h1>
-  <h5>Rate other shit💩head drivers on their driving</h5>
-  <p>👎&nbsp;&nbsp;That person who just cut you off.</p>
-  <p>👎&nbsp;&nbsp;How about that 🤬 taking up 3 parking spots.</p>
-  <p>👎&nbsp;&nbsp;And what about that 🤬 who never put on their indicator.</p>
-  <h5>Kudos to those who deserve it too</h5>
-  <p>👍&nbsp;&nbsp;That person who let you pass infront of him.</p>
-  <p>👍&nbsp;&nbsp;Good guy steve 😇 who helped you shovel your car out of 8 feet of snow.</p>
-  <h5>Have some fun with it</h5>
+  <h1 class="hide-on-small-only mb-0">Driver&nbsp;<strong>Rank</strong><small style="font-size:20px;color:red;">&nbsp;beta</small></h1>
+  <h5 class="hide-on-small-only">A place where you can rate 💩heads on their driving</h5>
+  <h5 class="hide-on-med-and-up mt-3">A place where you can rate 💩heads on their driving</h5>
+  <p>👎&nbsp;&nbsp;That person who just cut you off</p>
+  <p>👎&nbsp;&nbsp;That 🤬 taking up 3 parking spots</p>
+  <p>👎&nbsp;&nbsp;That 🤬 who never puts on their indicator</p>
+  <p>👍&nbsp;&nbsp;That person who let you pass infront of him</p>
+  <p>👍&nbsp;&nbsp;Good guy steve 😇 who helped you shovel your car out of 8 feet of snow</p>
   <p>🤔&nbsp;&nbsp;How would you rate compared to other drivers?</p>
   <p>🤔&nbsp;&nbsp;Compared to your friends?</p>
-  <p>🤔&nbsp;&nbsp;Also, dont be dumb and use Driver Rank while driving 😕, get the passenger to do it.</p>
-  <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
-  <span>&nbsp;&nbsp;</span>
-  <%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+  <p>😕&nbsp;&nbsp;Don't be dumb and use Driver Rank while driving 🤦‍♂️, get the passenger to do it</p>
+  <div class="row hide-on-med-and-up">
+    <div class="col s6">
+      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3 px-3", :method => :get %>
+    </div>
+    <div class="col s6">
+      <%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3 px-3", :method => :get %>
+    </div>
+  </div>
+  <div class="row hide-on-small-only ">
+    <div class="col m12mb-4">
+      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
+      <span>&nbsp;&nbsp;</span>
+      <%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+    </div>
+  </div>

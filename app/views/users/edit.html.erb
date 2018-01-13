@@ -1,7 +1,8 @@
 <% content_for :title, @user.name %>
-<h1>Update your profile</h1>
-<div class="row section">
+<div class="row">
   <div class="col m8 offset-m2">
+    <h3 class="hide-on-small-only">Update your profile</h3>
+    <h4 class="hide-on-med-and-up">Update your profile</h4>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 

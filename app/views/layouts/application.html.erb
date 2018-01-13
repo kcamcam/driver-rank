@@ -6,9 +6,12 @@
     <!-- Favicon -->
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
     <link rel="apple-touch-icon" href="<%= asset_path('apple-touch-icon.png')%>">
-    <meta name="apple-mobile-web-app-title" content="DriverRank">
+    <!-- Meta Tags -->
+    <meta name="apple-mobile-web-app-title" content="Driver Rank">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="driver rank,driver,rank,driving,social,rate,rating,ranking,bad driver,good driver">
+    <meta name="author" content="Kevin Camellini">
     <!-- Import Font Awesome -->
     <script src="https://use.fontawesome.com/8f2ae3cde2.js"></script>
     <!-- Import Material Icons -->
@@ -29,15 +32,15 @@
   <body>
     <nav>
       <div class="nav-wrapper blue">
-        <%= link_to (raw("🚘 Driver <strong>Rank</strong>")), root_path, class: "pl-4 brand-logo left" %>
+        <%= link_to (raw("🚘 Driver <strong>Rank</strong><small style=\"font-size:15px;color:red;\">&nbsp;beta</small>")), root_path, class: "pl-4 brand-logo left" %>
         <ul class="right">
         <% if logged_in? %>
           <li class="hide-on-small-only"><%= link_to current_user.name, current_user %></li>
           <li class="hide-on-med-and-up"><%= link_to "👤", current_user %></li>
-          <li><%= link_to "✏️", edit_user_path(current_user), style: "font-size: 1.3em;" %></li>
+          <!-- <li><%# link_to "✏️", edit_user_path(current_user), style: "font-size: 1.3em;" %></li> -->
           <li><%= link_to (raw("<span>🔒</span>")), logout_path, method: :delete, style: "font-size: 1.3em;", id: "logout-emoji" %></li>
         <% else %>
-          <li><%= link_to (raw("<span>Register ✏️</span>")), users_new_path, class: "pr-0"%></li>
+          <!-- <li><%# link_to (raw("<span>Register ✏️</span>")), users_new_path, class: "pr-0"%></li> -->
           <li><%= link_to (raw("<span>Login 🔓</span>")), login_path, id: "login-emoji" %></li>
         <% end %>
         </ul>
@@ -45,8 +48,8 @@
     </nav>
 
     <!-- Container -->
-    <main class=" grey lighten-4 pb-5">
-      <div class="container py-3">
+    <main class=" grey lighten-4">
+      <div class="container">
         <%= yield %>
       </div>
     </main>
@@ -63,9 +66,9 @@
     <!-- Footer -->
     <footer class="blue darken-2">
         <div class="container">
-          <div class="row py-5 my-0">
+          <div class="row py-5 my-0 p-xs-3">
             <div class="col s7 pr-0" id="signature">
-              <a href="https://kcamel.com" class="white-text">
+              <a href="https://kcamel.com" class="grey-text text-lighten-3">
                 <i class="fa fa-chevron-left"></i>
                 <i class="fa fa-chevron-right"></i>
                 with
@@ -74,12 +77,12 @@
                 <span class="footer_name">Kevin&nbsp;Camellini</span>
               </a>
               <br />
-              <br/>
-              <span class="white-text">&copy;&nbsp;DriverRank.ca <span id="yearfooter"></span></span>
+              <br />
+              <span class="grey-text text-lighten-2">&copy;&nbsp;DriverRank.ca <span id="yearfooter"></span></span>
             </div>
-            <div class="col s5 pl-0 right-align white-text">
-              <%= link_to (raw("iPhone&nbsp;<i class=\"fa fa-apple\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue" %>
-              <%= link_to (raw("Android&nbsp;<i class=\"fa fa-android\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue" %>
+            <div class="col s5 pl-0 right-align grey-text text-lighten-2">
+              <%= link_to (raw("iPhone&nbsp;<i class=\"fa fa-apple\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue grey-text text-lighten-3", style: "text-transform: none;" %>
+              <%= link_to (raw("Android&nbsp;<i class=\"fa fa-android\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue grey-text text-lighten-3", style: "text-transform: none;" %>
             </div>
           </div>
         </div>
