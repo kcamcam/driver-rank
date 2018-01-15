@@ -13,7 +13,7 @@ function formatInput() {
   var plateval = document.getElementById('plate-input').value;
   var size = plateval.length;
   var key = event.keyCode || event.charCode;
-  if (size == 3 && key != 8 && key != 32) {
+  if (size == 3 && key != 8 && key != 32) {//8=backscpace, 32 = space
     element.value = plateval+" ";
   }
 }

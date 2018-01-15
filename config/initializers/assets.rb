@@ -7,6 +7,7 @@ Rails.application.config.assets.precompile += %w( script.js )
 Rails.application.config.assets.precompile += %w( LicensePlate.ttf )
 Rails.application.config.assets.precompile += %w( favicon.png )
 Rails.application.config.assets.precompile += %w( apple-touch-icon.png )
+Rails.application.config.assets.precompile += %w( launch.png )
 Rails.application.config.assets.precompile += %w( bootstrap-padding.css )
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path

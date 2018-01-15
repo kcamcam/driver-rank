@@ -30,6 +30,10 @@ class LicenceplatesController < ApplicationController
 
   def create
     @licenceplate = Licenceplate.new(licenceplate_params)
+    # Insert a space in the middle if the plate is length == 6
+    if @licenceplate.plate.length == 6
+      @licenceplate.plate.insert(3," ")
+    end
     if @licenceplate.save
       @licenceplate.plate.upcase!
       redirect_to @licenceplate
