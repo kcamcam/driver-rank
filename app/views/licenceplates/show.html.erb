@@ -41,7 +41,7 @@
     <%= link_to "👈  Ranks", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", style: "width:100%;", :method => :get %>
   </div>
   <div class="col s5 m3">
-    <button class="show-comments waves-effect waves-light btn-large blue mt-3"  style="width:100%;",>💬&nbsp;Chat</button>
+    <a class="show-comments waves-effect waves-light btn-large blue mt-3"  style="width:100%;",>💬&nbsp;Chat</a>
   </div>
   <% if !current_user.nil? && current_user.admin?%>
     <div class="col s5 offset-s1 m3 offset-m3">
