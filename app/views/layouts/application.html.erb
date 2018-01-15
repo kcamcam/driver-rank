@@ -48,13 +48,13 @@
       </div>
     </nav>
 
-    <!-- Container -->
     <main class=" grey lighten-4">
+      <!-- Container -->
       <div class="container">
         <%= yield %>
       </div>
+      <!-- /.Container -->
     </main>
-    <!-- /.Container -->
 
     <!-- Zoom Zoom Car -->
     <% if current_page?('/licenceplates/new')%>
@@ -77,13 +77,12 @@
                 by
                 <span class="footer_name">Kevin&nbsp;Camellini</span>
               </a>
-              <br />
-              <br />
-              <span class="grey-text text-lighten-2">&copy;&nbsp;DriverRank.ca <span id="yearfooter"></span></span>
+              <br/>
+              <div class="grey-text text-lighten-2 mt-2">&copy;&nbsp;DriverRank.ca <span id="yearfooter"></span></div>
             </div>
             <div class="col s5 pl-0 right-align grey-text text-lighten-2">
-              <%= link_to (raw("iPhone&nbsp;<i class=\"fa fa-apple\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue grey-text text-lighten-3", style: "text-transform: none;" %>
-              <%= link_to (raw("Android&nbsp;<i class=\"fa fa-android\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue grey-text text-lighten-3", style: "text-transform: none;" %>
+              <%= link_to (raw("iPhone&nbsp;<i class=\"fa fa-apple\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue grey-text text-lighten-3"%>
+              <%= link_to (raw("Android&nbsp;<i class=\"fa fa-android\"></i>")), appstore_index_path, id: "footer-button", class: "btn blue grey-text text-lighten-3"%>
             </div>
           </div>
         </div>

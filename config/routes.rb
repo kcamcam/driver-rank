@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
   get 'users/new'
+  get 'users/likes'
+  get 'users/dislikes'
   get 'welcome/index'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

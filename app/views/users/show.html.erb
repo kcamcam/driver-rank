@@ -2,33 +2,42 @@
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
-<h2><%= @user.name %></h2>
-<h5><strong>Email </strong> <%= @user.email %></h5>
-<h5><strong>Joined </strong></strong><%= @user.created_at.strftime("%B %d, %Y") %></h5>
-<h5><strong><%= @user.find_voted_items.size %></strong> Total Votes</h5>
-<h5><strong><%= @user.find_liked_items.size %></strong> Likes</h5>
-<h5><strong><%= @downvotes = @user.find_disliked_items.size %></strong> Dislikes</h5>
-
+<h3><%= @user.name %></h3>
+<p><strong>Email </strong> <%= @user.email %></p>
+<p><strong>Joined </strong></strong><%= @user.created_at.strftime("%B %d, %Y") %></p>
+<p><strong><%= @user.find_voted_items.size %></strong> Total Votes</p>
+<p><strong><%= @user.find_liked_items.size %></strong> <%= link_to 'Likes', users_likes_path %></p>
+<p><strong><%= @downvotes = @user.find_disliked_items.size %></strong> <%= link_to 'dislikes', users_likes_path %></p>
+<!-- Nav Links - Mobile Only -->
 <div class="row mb-0 hide-on-med-and-up center-align">
-    <%= link_to raw("✏️"), edit_user_path(current_user), class: "waves-effect waves-light btn-large green mt-3" %>
-    <span>&nbsp;&nbsp;</span>
-    <%= link_to raw("🏁"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
-    <span>&nbsp;&nbsp;</span>
-    <%= link_to raw("🏡"), welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", :method => :get %>
-    <br/>
+  <div class="col s4">
+    <%= link_to raw("✏️"), edit_user_path(current_user), class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
+  </div>
+  <div class="col s4">
+    <%= link_to raw("🏁"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", style: "width:100%", :method => :get %>
+  </div>
+  <div class="col s4">
+    <%= link_to raw("🏡"), welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", style: "width:100%", :method => :get %>
+  </div>
     <% if current_user.admin? && !current_user?(@user) %>
-      <span>&nbsp;&nbsp;</span>
-      <%= link_to "🤚", @user, method: :delete,
-                                      data: { confirm: "You sure?" },
-                                      class: "waves-effect waves-light btn-large red mt-3" %>
+      <div class="col s6">
+        <%= link_to "🤚", @user, method: :delete,
+                                data: { confirm: "You sure?" },
+                                class: "waves-effect waves-light btn-large red mt-3",
+                                style: "width:100%" %>
+      </div>
     <% end %>
     <% if current_user.admin?%>
-      <span>&nbsp;&nbsp;</span>
-      <%= link_to "🤠", users_path, class: "waves-effect waves-light btn-large  blue-grey mt-3" %>
+      <div class="col s12">
+        <%= link_to "🤠", users_path, class: "waves-effect waves-light btn-large blue-grey mt-3", style: "width:100%" %>
+      </div>
     <% end  %>
 </div>
+<!--./ Nav Links -->
+
+<!-- Nav Links - Desktop Only -->
 <div class="hide-on-small-only">
-  <%= link_to raw("✏️&nbsp;Edit Profile"), edit_user_path(current_user), class: "waves-effect waves-light btn-large green mt-3" %>
+  <%= link_to raw("✏️&nbsp;Edit"), edit_user_path(current_user), class: "waves-effect waves-light btn-large green mt-3" %>
   <span>&nbsp;&nbsp;</span>
   <%= link_to raw("🏁&nbsp;View Rankings"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
   <span>&nbsp;&nbsp;</span>
@@ -44,3 +53,4 @@
     <%= link_to "🤠  Users", users_path, class: "waves-effect waves-light btn-large  blue-grey mt-3" %>
   <% end  %>
 </div>
+<!--./ Nav Links -->

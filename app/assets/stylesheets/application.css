@@ -45,6 +45,7 @@ main{
   content:"🔓"
 }
 
+
 /* Change lock on hover */
 #login-emoji:hover span {
   display:none
@@ -56,6 +57,11 @@ main{
 #footer-button{
   width: 10em;
   margin: 0 5px 5px 5px;
+}
+
+.btn, .btn-large{
+  /* Remove auto capitalization of buttons */
+  text-transform: none;
 }
 
 /*========== Mobile Fixes ==========*/

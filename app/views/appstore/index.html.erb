@@ -4,25 +4,23 @@
   <div class="col s12 m8 offset-m2">
     <h3 class="hide-on-small-only">JK 😂</h3>
     <p class="mb-0">
-      <span class="hide-on-med-and-up">JK 😂</span> Not on the <strong>Appstore</strong> or <strong>Google Play Store</strong>... yet! But if you think it should/shouldn't be, give it a thumbs up/down.
+      <span class="hide-on-med-and-up">JK 😂</span> Not on the <strong>Appstore</strong> or <strong>Google Play Store</strong>. But if you think it should be (or not), give it a thumbs up/down.
     </p>
 
     <!-- Votes -->
-    <div class="col s3 offset-s3 center-align">
-        <td class="py-0 pl-0">
-          <h5 id="votes" class="green-text pt-0 mt-0"><%= User.first.get_upvotes.size%></h5>
-        </td>
-        <td class="py-0 pr-0">
-          <a class="btn-floating btn-large waves-effect waves-light red" data-method="put" href="appstore/1/downvote">👎</a>
-        </td>
-    </div>
-    <div class="col s3 center-align">
-        <td class="py-0 pr-0">
-          <h5 id="votes" class="red-text pt-0 mt-0"><%= @kevin.get_downvotes.size%></h5>
-        </td>
-        <td class="py-0 pl-0">
-          <a class="btn-floating btn-large waves-effect waves-light green" data-method="put" href="appstore/1/upvote">👍</a>
-        </td>
+    <div class="row mb-0 mt-2 mt-xs-0">
+      <div class="col s2 valign-wrapper">
+        <h5 id="votes" class="green-text"><%= User.first.get_upvotes.size%></h5>
+      </div>
+      <div class="col s4">
+        <a class="btn-floating btn-large waves-effect waves-light green" data-method="put" href="appstore/1/upvote">👍</a>
+      </div>
+      <div class="col s4">
+        <a class="btn-floating btn-large waves-effect waves-light red" data-method="put" href="appstore/1/downvote">👎</a>
+      </div>
+      <div class="col s2 valign-wrapper">
+        <h5 id="votes" class="red-text"><%= @kevin.get_downvotes.size%></h5>
+      </div>
     </div>
     <!-- ./ Votes -->
   </div>
@@ -31,7 +29,7 @@
     <h4 class="hide-on-small-only"> In the meantime</h4>
     <p class="mb-xs-2"><span class="hide-on-med-and-up">In the meantime </span>add a shortcut to your homescreen. <a href="https://youtu.be/oKMQ0F-JflU">Instructions</a></p>
     <%= image_tag "ios.png", :alt => "app icon img", width: "100%;"  %>
-    <p class="mt-xs-1"><strong class="red-text">Tip:</strong> Add the shortcut while on the New Rank page for quicker access.</p>
+    <p class="mt-xs-1 mb-xs-2"><strong class="red-text">Tip:</strong> Add the shortcut while on the New Rank page for quicker access.</p>
   </div>
 
   <!-- Nav Links -->

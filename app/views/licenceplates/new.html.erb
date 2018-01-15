@@ -38,12 +38,15 @@
     <!-- ./ Licence Plate -->
 
     <!-- Submit & Buttons -->
-    <div class="row center-align mb-0">
-      <%= form.submit "👍 Submit", class: "waves-effect waves-light btn-large green mt-3", id: "new-plate-submit" %>
-      <span>&nbsp;&nbsp;</span>
-      <%= link_to "🏁 Rankings", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+    <div class="row">
+      <div class="col s5 offset-s1 m3 offset-m3">
+        <%= form.submit raw("👍&nbsp;&nbsp;Submit"), class: "waves-effect waves-light btn-large green mt-0", style: "width:100%;", id: "new-plate-submit" %>
+      </div>
+      <div class="col s5 m3">
+        <%= link_to raw("🏁&nbsp;&nbsp;Ranks"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-0", style: "width:100%;", :method => :get %>
+      </div>
     </div>
-    <!-- ./ Submit & Buttons -->
+    <!-- Submit & Buttons -->
 
     <!-- Error Messages -->
     <% if @licenceplate.errors.any? %>
@@ -52,9 +55,8 @@
           <h6>
             <%= pluralize(@licenceplate.errors.count, "error") %> prohibited rating the licence plate.
           </h6>
-          <h5>🛑&nbsp;🔨&nbsp;⏱</h5>
           <% @licenceplate.errors.full_messages.each do |msg| %>
-            <p style="color:red;" class="center-align"><%= raw msg %></p>
+            <p style="color:red;" class="center-align">🤦‍♂️ <%= raw msg %></p>
           <% end %>
         </div>
       </div>

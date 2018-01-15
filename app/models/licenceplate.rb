@@ -4,5 +4,5 @@ class Licenceplate < ApplicationRecord
                     uniqueness: true,
                     length: { in: 6..7 },
                     format: { with: /\A[\d\a-z]{3} ?[\d\a-z]{3,4}\Z/i,
-                    message: "entered is not a valid Quebec licence plate 🤦 <br/> A valid licence plate is: <br/>from [B00 AAA] <br/>to [ZZZ ZZZ] or [Z99 ZZZ]"}
+                    message: "entered is not a valid licence plate"}
 end

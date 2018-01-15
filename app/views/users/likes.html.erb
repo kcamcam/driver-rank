@@ -1,0 +1,60 @@
+<% content_for :title, @user.name %>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<!-- Row -->
+<div class="row mb-0">
+  <div class="col m8 offset-m2 s12">
+    <h3>Likes</h3>
+  </div>
+  <!-- Table -->
+  <table class="striped centered col m8 offset-m2 s12">
+    <!-- Table Headers -->
+    <thead>
+      <tr>
+        <th><h4>🚘</h4></th>
+        <th><h4>📆</h4></th>
+      </tr>
+    </thead>
+    <!-- ./Table Headers -->
+    <!-- Table Body -->
+    <tbody>
+    <% @likes.each do |like| %>
+      <% if !like[:plate].nil? %>
+        <tr>
+          <td><%= link_to like[:plate], licenceplate_path(like[:id]) %></td>
+          <td><%= link_to like[:created_at].strftime("%d-%m-%Y"), licenceplate_path(like[:id]) %></td>
+        </tr>
+      <% end %>
+    <%end %>
+    </tbody>
+    <!-- ./Table Body -->
+  </table>
+  <!-- ./Table -->
+</div>
+<!-- ./Row -->
+
+<!-- Nav Links - Mobile Only -->
+<div class="row hide-on-med-and-up center-align">
+  <div class="col m8 offset-m2 s4">
+    <%= link_to raw("👈"), current_user, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
+  </div>
+  <div class="col s4">
+    <%= link_to raw("🏁"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", style: "width:100%", :method => :get %>
+  </div>
+  <div class="col s4">
+    <%= link_to raw("🏡"), welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", style: "width:100%", :method => :get %>
+  </div>
+</div>
+<!-- Nav Links - Desktop Only -->
+<div class="row hide-on-small-only">
+  <div class="col m2 offset-m2 s3">
+    <%= link_to raw("👈&nbsp;Back"), current_user, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
+  </div>
+  <div class="col m2 s3">
+    <%= link_to raw("🏁&nbsp;View Rankings"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3",style: "width:100%", :method => :get %>
+  </div>
+  <div class="col m2  s3">
+    <%= link_to raw("🏡&nbsp;Home"), welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3",style: "width:100%", :method => :get %>
+  </div>
+</div>

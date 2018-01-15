@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update, :destroy,:likes,:dislikes]
   before_action :admin_user,     only: [:destroy,:index]
 
   def index
@@ -43,6 +43,16 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
+  end
+
+  def likes
+    @user = current_user
+    @likes = current_user.find_up_voted_items
+  end
+
+  def dislikes
+    @user = current_user
+    @dislikes = current_user.find_down_voted_items
   end
 
   private

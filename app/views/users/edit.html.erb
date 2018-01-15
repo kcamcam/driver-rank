@@ -1,22 +1,22 @@
 <% content_for :title, @user.name %>
 <div class="row">
   <div class="col m8 offset-m2">
-    <h3 class="hide-on-small-only">Update your profile</h3>
-    <h4 class="hide-on-med-and-up">Update your profile</h4>
+    <h3 class="hide-on-small-only">Update Your Profile</h3>
+    <h5 class="hide-on-med-and-up">Update Profile</h5>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, class: 'form-control mb-xs-3' %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control mb-xs-3' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control mb-xs-3' %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control mb-xs-3' %>
 
       <%= f.submit "👌 Save changes", class: "waves-effect waves-light btn-large green mt-3" %>
       <span>&nbsp;&nbsp;</span>
