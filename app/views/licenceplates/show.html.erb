@@ -41,7 +41,7 @@
     <%= link_to "👈  Ranks", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", style: "width:100%;", :method => :get %>
   </div>
   <div class="col s5 m3">
-    <a class="show-comments waves-effect waves-light btn-large blue mt-3"  style="width:100%;",>💬&nbsp;Chat</a>
+    <button onclick="showchat();" class="waves-effect waves-light btn-large blue mt-3"  style="width:100%;",>💬&nbsp;Chat</button>
   </div>
   <% if !current_user.nil? && current_user.admin?%>
     <div class="col s5 offset-s1 m3 offset-m3">
@@ -64,14 +64,12 @@
   </div>
 </div>
 <script>
-// function showchat(){
-//   (function() { // DON'T EDIT BELOW THIS LINE
-//   var d = document, s = d.createElement('script');
-//   s.src = 'https://driverrank-ca.disqus.com/embed.js';
-//   s.setAttribute('data-timestamp', +new Date());
-//   (d.head || d.body).appendChild(s);
-//   })();
-// }
+  // (function() { // DON'T EDIT BELOW THIS LINE
+  // var d = document, s = d.createElement('script');
+  // s.src = 'https://driverrank-ca.disqus.com/embed.js';
+  // s.setAttribute('data-timestamp', +new Date());
+  // (d.head || d.body).appendChild(s);
+  // })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <!-- Some Diquss Business -->

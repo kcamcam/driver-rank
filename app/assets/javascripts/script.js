@@ -29,15 +29,17 @@ $(function() {
 });
 
 // Load disqus chat on button click
-$(document).ready(function() {
-  $('.show-comments').on('click', function(){
+// $(document).ready(function() {
+  // $('.show-comments').on('click', function(){
+  function showchat(){
     var disqus_shortname = 'driverrank-ca';
     // ajax request to load the disqus javascript
     $.ajax({
       type: "GET",
-      url: "https://" + disqus_shortname + ".disqus.com/embed.js",
+      url: "http://" + disqus_shortname + ".disqus.com/embed.js",
       dataType: "script",
       cache: true
     });
-  });
-});
+  }
+  // });
+// });
