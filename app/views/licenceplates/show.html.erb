@@ -38,7 +38,7 @@
 <!-- Nav Links -->
 <div class="row center-align mb-3">
   <div class="col s5 offset-s1 m3 offset-m3">
-    <%= link_to "👈  Ranks", licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", style: "width:100%;", :method => :get %>
+    <%= link_to raw("👈&nbsp;&nbsp;Back"), licenceplates_path, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%;", :method => :get %>
   </div>
   <div class="col s5 m3">
     <button onclick="showchat();" class="waves-effect waves-light btn-large blue mt-3"  style="width:100%;",>💬&nbsp;Chat</button>
@@ -47,31 +47,30 @@
     <div class="col s5 offset-s1 m3 offset-m3">
       <%= link_to "✏️  Edit",  edit_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%;", :method => :get %>
     </div>
-    <div class="col s5  m3 ">
-      <%= link_to "🤚  Delete", @licenceplate, method: :delete,
-                                  data: { confirm: "You sure?" },
-                                  class: "waves-effect waves-light btn-large red mt-3",
-                                  style: "width:100%;" %>
+    <div class="col s5 m3 ">
+      <%= link_to "🤚  Delete", @licenceplate, method: :delete, data: { confirm: "You sure?" }, class: "waves-effect waves-light btn-large red mt-3", style: "width:100%;" %>
     </div>
   <% end  %>
 </div>
+<% if current_user.admin?%>
+  <div class="row center-align mb-3">
+      <div class="col s5 offset-s1 m3 offset-m3">
+        <a class="btn-large waves-effect waves-light green" style="width:100%" data-method="get" href="/licenceplates/<%= @licenceplate.id %>/likes">👍</a>
+      </div>
+      <div class="col s5 m3 ">
+        <a class="btn-large waves-effect waves-light red" style="width:100%" data-method="get" href="/licenceplates/<%= @licenceplate.id %>/dislikes">👎</a>
+      </div>
+  </div>
+<% end %>
 <!-- ./ Nav Links -->
 
-<!-- Disquss -->
+<!-- Disqus -->
 <div class="row mb-3">
   <div class="col s12 m8 offset-m2">
     <div id="disqus_thread"></div>
   </div>
 </div>
-<script>
-  // (function() { // DON'T EDIT BELOW THIS LINE
-  // var d = document, s = d.createElement('script');
-  // s.src = 'https://driverrank-ca.disqus.com/embed.js';
-  // s.setAttribute('data-timestamp', +new Date());
-  // (d.head || d.body).appendChild(s);
-  // })();
-</script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <!-- Some Diquss Business -->
 <script id="dsq-count-scr" src="//driverrank-ca.disqus.com/count.js" async></script>
-<!-- ./ Disquss -->
+<!-- ./ Disqus -->

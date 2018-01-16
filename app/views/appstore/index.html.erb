@@ -1,3 +1,4 @@
+<% content_for :title, 'Appstore' %>
 <!-- Row -->
 <div class="row">
   <!-- ./ column -->
@@ -33,11 +34,21 @@
   </div>
 
   <!-- Nav Links -->
-  <div class="col s12 center-align">
-    <%= link_to raw("🏡&nbsp;Home"), welcome_index_path, class: "waves-effect waves-light btn-large blue", :method => :get %>
-    <span>&nbsp;&nbsp;</span>
-    <%= link_to (raw("🏁&nbsp;Ranks")), licenceplates_path, class: "waves-effect waves-light btn-large orange", :method => :get %>
+  <div class="row center-align mb-3">
+    <div class="col s10 offset-s1 m6 offset-m3">
+      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green", style: "width:100%;", :method => :get %>
+    </div>
   </div>
+  <% if current_user.admin?%>
+    <div class="row center-align mb-3">
+        <div class="col s5 offset-s1 m3 offset-m3">
+          <a class="btn-large waves-effect waves-light green" style="width:100%" data-method="get" href="/appstore/likes">👍</a>
+        </div>
+        <div class="col s5 m3 ">
+          <a class="btn-large waves-effect waves-light red" style="width:100%" data-method="get" href="/appstore/dislikes">👎</a>
+        </div>
+    </div>
+  <% end %>
   <!-- ./ Nav Links -->
 </div>
 <!-- ./ Row -->

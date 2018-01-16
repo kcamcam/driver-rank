@@ -39,3 +39,4 @@ function showchat(){
     cache: true
   });
 }
+;

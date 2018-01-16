@@ -1,12 +1,12 @@
-<% content_for :title, @user.name %>
+<% content_for :title, 'Appstore' %>
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 <!-- Row -->
 <div class="row mb-0">
   <div class="col m8 offset-m2 s12">
-    <h4 class="hide-on-small-only">👍 Thumbs Up <%= @user.find_liked_items.size %></h4>
-    <h4 class="center-align hide-on-med-and-up">👍 Thumbs Up <%= @user.find_liked_items.size %></h4>
+    <h4 class="hide-on-small-only">👎 Thumbs Down <%= @dislikes.size %></h4>
+    <h4 class="center-align hide-on-med-and-up">👎 Thumbs Down <%= @dislikes.size %></h4>
   </div>
   <!-- Table -->
   <table class="striped centered col m8 offset-m2 s12">
@@ -20,11 +20,11 @@
     <!-- ./Table Headers -->
     <!-- Table Body -->
     <tbody>
-    <% @likes.each do |like| %>
-      <% if !like[:plate].nil? %>
+    <% @dislikes.each do |dislike| %>
+      <% if !dislike[:voter_id].nil? %>
         <tr>
-          <td><%= link_to like[:plate].upcase, licenceplate_path(like[:id]) %></td>
-          <td><%= like[:created_at].strftime("%Y-%m-%d") %></td>
+          <td><%= link_to User.find(dislike[:voter_id]).name, user_path(dislike[:voter_id]) %></td>
+          <td><%= dislike[:created_at].strftime("%Y-%m-%d") %></td>
         </tr>
       <% end %>
     <%end %>
@@ -38,6 +38,6 @@
 <!-- Nav Links -->
 <div class="row center-align">
   <div class="col m6 offset-m3 s10 offset-s1">
-    <%= link_to raw("👈"), current_user, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
+    <%= link_to raw("👈&nbsp;&nbsp;Back"), appstore_index_path, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
   </div>
 </div>

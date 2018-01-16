@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if current_user.admin?
+      @user = User.find(params[:id])
+    else
+      @user = User.find(current_user[:id])
+    end
   end
 
   def new
@@ -46,13 +50,23 @@ class UsersController < ApplicationController
   end
 
   def likes
-    @user = current_user
-    @likes = current_user.find_up_voted_items
+    if !current_user.nil? && current_user.admin?
+      @user = User.find(params[:user_id])
+      @likes = User.find(params[:user_id]).find_up_voted_items
+    else
+      @user = User.find(current_user[:id])
+      @likes = current_user.find_up_voted_items
+    end
   end
 
   def dislikes
-    @user = current_user
-    @dislikes = current_user.find_down_voted_items
+    if !current_user.nil? && current_user.admin?
+      @user = User.find(params[:user_id])
+      @dislikes = User.find(params[:user_id]).find_down_voted_items
+    else
+      @user = User.find(current_user[:id])
+      @dislikes = current_user.find_down_voted_items
+    end
   end
 
   private

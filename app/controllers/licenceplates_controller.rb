@@ -1,6 +1,7 @@
 class LicenceplatesController < ApplicationController
   before_action :logged_in_user, only: [:new]
-  before_action :admin_user,     only: [:update]
+  before_action :admin_user,     only: [:update,:likes,:dislikes,:edit,:destroy]
+
   def index
     @licenceplates = Licenceplate.all
   end
@@ -79,6 +80,24 @@ class LicenceplatesController < ApplicationController
       redirect_to @licenceplate
     else
       redirect_to login_url
+    end
+  end
+
+  def likes
+    if !current_user.nil? && current_user.admin?
+      @licenceplate = Licenceplate.find(params[:licenceplate_id])
+      @likes = Licenceplate.find(params[:licenceplate_id]).get_likes
+    else
+      redirect_to licenceplates_path
+    end
+  end
+
+  def dislikes
+    if !current_user.nil? && current_user.admin?
+      @licenceplate = Licenceplate.find(params[:licenceplate_id])
+      @dislikes = Licenceplate.find(params[:licenceplate_id]).get_dislikes
+    else
+      redirect_to licenceplates_path
     end
   end
 

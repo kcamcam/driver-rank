@@ -11,18 +11,12 @@
   <p>🤔&nbsp;&nbsp;How would you rate compared to other drivers?</p>
   <p>🤔&nbsp;&nbsp;Compared to your friends?</p>
   <p>😕&nbsp;&nbsp;Don't be dumb. Don't use Driver Rank while driving 🤦‍♂️ get the passenger to do it</p>
-  <div class="row hide-on-med-and-up">
-    <div class="col s6">
-      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green px-3", style: "width:100%;", :method => :get %>
+
+  <div class="row">
+    <div class="col s6 m4">
+      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%", :method => :get %>
     </div>
-    <div class="col s6">
-      <%= link_to (raw("🏁&nbsp;&nbsp;Ranks")), licenceplates_path, class: "waves-effect waves-light btn-large orange px-3", style: "width:100%;", :method => :get %>
-    </div>
-  </div>
-  <div class="row hide-on-small-only ">
-    <div class="col m12 mb-4">
-      <%= link_to (raw("🚘&nbsp;&nbsp;Rate Someone")), new_licenceplate_path, class: "waves-effect waves-light btn-large green mt-3", :method => :get %>
-      <span>&nbsp;&nbsp;</span>
-      <%= link_to (raw("🏁&nbsp;&nbsp;View Rankings")), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", :method => :get %>
+    <div class="col s6 m4">
+      <%= link_to (raw("🏁&nbsp;&nbsp;View Ranks")), licenceplates_path, class: "waves-effect waves-light btn-large blue mt-3", style: "width:100%", :method => :get %>
     </div>
   </div>

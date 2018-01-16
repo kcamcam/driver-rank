@@ -1,14 +1,53 @@
 <% provide(:title, '🔑 Admin') %>
-<h2><strong class="orange-text">🔑ADMIN:</strong> Listing All Users</h2>
-
-<ul class="users">
+<h4><strong class="orange-text">🔑ADMIN:</strong> All Users</h4>
+<div class="row mb-1 center-align">
+  <div class="col s4">
+    <h5>🕵️‍♂️</h5>
+  </div>
+  <div class="col s2">
+    <h5>🏁</h5>
+  </div>
+  <div class="col s2">
+    <h5>👍</h5>
+  </div>
+  <div class="col s2">
+    <h5>👎</h5>
+  </div>
+  <div class="col s2">
+    <h5>🛑</h5>
+  </div>
+</div>
+<div class="row center-align">
   <% @users.each do |user| %>
-    <li><%= link_to user.name, user%>
-    <% if current_user.admin? && !current_user?(user) %>
-      | <%= link_to "delete", user, method: :delete,
-                                    data: { confirm: "You sure?" } %>
-    <% end %>
-    </li>
-    
+
+    <!-- User -->
+    <div class="col s4">
+      <%= link_to user.name, user%>
+    </div>
+
+    <!-- Total Votes -->
+    <div class="col s2">
+      <%= user.find_voted_items.size%>
+    </div>
+
+    <!-- Upvotes -->
+    <div class="col s2">
+      <%= user.find_liked_items.size%>
+    </div>
+
+    <!-- Downvotes -->
+    <div class="col s2">
+      <%= user.find_disliked_items.size%>
+    </div>
+
+    <!-- Delete -->
+    <div class="col s2">
+      <% if current_user.admin? && !current_user?(user) %>
+        <%= link_to "delete", user, method: :delete, data: { confirm: "Are you sure?" }, class: "red-text" %>
+      <% else %>
+        <span>admin</span>
+      <% end%>
+    </div>
+
   <% end %>
-</ul>
+</div>

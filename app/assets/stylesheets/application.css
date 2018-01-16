@@ -31,11 +31,11 @@ main{
 
 /* Change Color of Checkbox on Log In Page  */
 [type="checkbox"]+label:before, [type="checkbox"]:not(.filled-in)+label:after{
-  border-color: rgb(72,149,236);
+  border-color: rgb(103,172,91);
 }
 [type="checkbox"]:checked+label:before{
-  border-right: 2px solid rgb(72,149,236);
-  border-bottom: 2px solid rgb(72,149,236);
+  border-right: 2px solid rgb(103,172,91);
+  border-bottom: 2px solid rgb(103,172,91);
 }
 /* Change lock on hover */
 #logout-emoji:hover span {

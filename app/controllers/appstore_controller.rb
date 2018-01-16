@@ -1,8 +1,12 @@
 class AppstoreController < ApplicationController
-  # before_action :logged_in_user, only: [:upvote,:downvote]
+  before_action :admin_user,     only: [:likes,:dislikes]
+  
   def index
     @users = User.all
     @kevin = User.first
+  end
+
+  def show
   end
 
   def update
@@ -27,4 +31,44 @@ class AppstoreController < ApplicationController
       redirect_to login_url
     end
   end
+
+  def likes
+    @kevin = User.first
+    if !current_user.nil? && current_user.admin?
+      @likes = @kevin.get_likes
+    else
+      redirect_to login_url
+    end
+  end
+
+  def dislikes
+    @kevin = User.first
+    if !current_user.nil? && current_user.admin?
+      @dislikes = @kevin.get_dislikes
+    else
+      redirect_to login_url
+    end
+  end
+
+  private
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+
+    # Confirms an admin user.
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+
 end

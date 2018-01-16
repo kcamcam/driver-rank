@@ -5,25 +5,26 @@
 <!-- Row -->
 <div class="row mb-0">
   <div class="col m8 offset-m2 s12">
-    <h3>Dislikes</h3>
+    <h4 class="hide-on-small-only">👎 Thumbs Down <%= @user.find_disliked_items.size %></h4>
+    <h4 class="center-align hide-on-med-and-up">👎 Thumbs Down <%= @user.find_disliked_items.size %></h4>
   </div>
   <!-- Table -->
   <table class="striped centered col m8 offset-m2 s12">
     <!-- Table Headers -->
     <thead>
       <tr>
-        <th><h4>🚘</h4></th>
-        <th><h4>📆</h4></th>
+        <th><h5>🚘</h5></th>
+        <th><h5>📆</h5></th>
       </tr>
     </thead>
     <!-- ./Table Headers -->
     <!-- Table Body -->
     <tbody>
     <% @dislikes.each do |dislike| %>
-      <% if !like[:plate].nil? %>
+      <% if !dislike[:plate].nil? %>
         <tr>
-          <td><%= link_to dislike[:plate], licenceplate_path(dislike[:id]) %></td>
-          <td><%= link_to dislike[:created_at].strftime("%d-%m-%Y"), licenceplate_path(dislike[:id]) %></td>
+          <td><%= link_to dislike[:plate].upcase, licenceplate_path(dislike[:id]) %></td>
+          <td><%= dislike[:created_at].strftime("%Y-%m-%d") %></td>
         </tr>
       <% end %>
     <%end %>
@@ -34,27 +35,9 @@
 </div>
 <!-- ./Row -->
 
-<!-- Nav Links - Mobile Only -->
-<div class="row hide-on-med-and-up center-align">
-  <div class="col m8 offset-m2 s4">
+<!-- Nav Links -->
+<div class="row center-align">
+  <div class="col m6 offset-m3 s10 offset-s1">
     <%= link_to raw("👈"), current_user, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
-  </div>
-  <div class="col s4">
-    <%= link_to raw("🏁"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3", style: "width:100%", :method => :get %>
-  </div>
-  <div class="col s4">
-    <%= link_to raw("🏡"), welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3", style: "width:100%", :method => :get %>
-  </div>
-</div>
-<!-- Nav Links - Desktop Only -->
-<div class="row hide-on-small-only">
-  <div class="col m2 offset-m2 s3">
-    <%= link_to raw("👈&nbsp;Back"), current_user, class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
-  </div>
-  <div class="col m2 s3">
-    <%= link_to raw("🏁&nbsp;View Rankings"), licenceplates_path, class: "waves-effect waves-light btn-large orange mt-3",style: "width:100%", :method => :get %>
-  </div>
-  <div class="col m2  s3">
-    <%= link_to raw("🏡&nbsp;Home"), welcome_index_path, class: "waves-effect waves-light btn-large blue mt-3",style: "width:100%", :method => :get %>
   </div>
 </div>
