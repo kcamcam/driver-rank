@@ -42,7 +42,7 @@
 
     <!-- Delete -->
     <div class="col s2">
-      <% if current_user.admin? && !current_user?(user) %>
+      <% if !current_user.nil? && current_user.admin? && !current_user?(user) %>
         <%= link_to "delete", user, method: :delete, data: { confirm: "Are you sure?" }, class: "red-text" %>
       <% else %>
         <span>admin</span>

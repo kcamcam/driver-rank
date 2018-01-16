@@ -32,7 +32,7 @@
   <%= form.submit "👌 Save changes", class: "waves-effect waves-light btn-large green mt-3" %>
   <span>&nbsp;&nbsp;</span>
   <%= link_to '👈 Back', licenceplate_path, class: "waves-effect waves-light btn-large blue mt-3" %>
-  <% if current_user.admin?%>
+  <% if !current_user.nil? && current_user.admin? %>
     <span>&nbsp;&nbsp;</span>
     <%= link_to "🤚 Delete", @licenceplate, method: :delete,
                                   data: { confirm: "You sure?" },

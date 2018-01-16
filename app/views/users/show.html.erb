@@ -14,7 +14,7 @@
   <div class="col s6 m3">
     <%= link_to raw("✏️&nbsp;&nbsp;Edit"), edit_user_path(current_user), class: "waves-effect waves-light btn-large green mt-3", style: "width:100%" %>
   </div>
-  <% if current_user.admin? && !current_user?(@user) %>
+  <% if !current_user.nil? && current_user.admin? && !current_user?(@user) %>
     <div class="col s6 m3">
       <%= link_to raw("🤚&nbsp;&nbsp;Delete"), @user, method: :delete, data: { confirm: "You sure?" }, class: "waves-effect waves-light btn-large red mt-3", style: "width:100%" %>
     </div>

@@ -52,7 +52,7 @@
     </div>
   <% end  %>
 </div>
-<% if current_user.admin?%>
+<% if !current_user.nil? && current_user.admin? %>
   <div class="row center-align mb-3">
       <div class="col s5 offset-s1 m3 offset-m3">
         <a class="btn-large waves-effect waves-light green" style="width:100%" data-method="get" href="/licenceplates/<%= @licenceplate.id %>/likes">👍</a>
