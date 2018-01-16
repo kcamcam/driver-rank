@@ -1,9 +1,11 @@
 class LicenceplatesController < ApplicationController
   before_action :logged_in_user, only: [:new]
   before_action :admin_user,     only: [:update,:likes,:dislikes,:edit,:destroy]
+  helper_method :sort_column, :sort_direction
 
   def index
-    @licenceplates = Licenceplate.all
+    # @licenceplates = Licenceplate.all
+    @licenceplates = Licenceplate.order(sort_column + " " + sort_direction)
   end
 
   def show
@@ -99,6 +101,14 @@ class LicenceplatesController < ApplicationController
     else
       redirect_to licenceplates_path
     end
+  end
+
+  def sort_column
+    Licenceplate.column_names.include?(params[:sort]) ? params[:sort] : "plate"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   private

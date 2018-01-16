@@ -9,7 +9,7 @@
       <!-- Table Headers -->
       <thead>
         <tr>
-          <th><h4>🚘</h4></th>
+          <th><%= sortable "plate", raw("<h4>🚘</h4>") %></th>
           <th><h4>🇨🇦</h4></th>
           <th><h4>👍</h4></th>
           <th><h4>👎</h4></th>
@@ -19,6 +19,7 @@
         </tr>
       </thead>
       <!-- ./Table Headers -->
+
       <!-- Table Body -->
       <tbody>
       <% @licenceplates.each do |licenceplate| %>
