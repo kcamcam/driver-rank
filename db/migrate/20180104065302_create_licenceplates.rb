@@ -1,4 +1,4 @@
-class CreateLicenceplates < ActiveRecord::Migration[5.1]
+class CreateLicenceplates < ActiveRecord::Migration[5.2]
   def change
     create_table :licenceplates do |t|
       t.string :plate
