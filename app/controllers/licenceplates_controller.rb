@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class LicenceplatesController < ApplicationController
   before_action :logged_in_user, only: [:new]
-  before_action :admin_user,     only: [:update,:likes,:dislikes,:edit,:destroy]
+  before_action :admin_user,     only: %i[update likes dislikes edit destroy]
   helper_method :sort_column, :sort_direction
 
   def index
@@ -28,14 +30,13 @@ class LicenceplatesController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def create
     @licenceplate = Licenceplate.new(licenceplate_params)
     # Insert a space in the middle if the plate is length == 6
     if @licenceplate.plate.length == 6
-      @licenceplate.plate.insert(3," ")
+      @licenceplate.plate.insert(3, " ")
     end
     if @licenceplate.save
       @licenceplate.plate.upcase!
@@ -48,7 +49,6 @@ class LicenceplatesController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   def destroy
@@ -112,29 +112,30 @@ class LicenceplatesController < ApplicationController
   end
 
   private
-    def licenceplate_params
-      params.require(:licenceplate).permit(:plate, :province)
-    end
 
-    # Before filters
+  def licenceplate_params
+    params.require(:licenceplate).permit(:plate, :province)
+  end
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
+  # Before filters
 
-    # Confirms the correct user.
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  # Confirms a logged-in user.
+  def logged_in_user
+    return if logged_in?
 
-    # Confirms an admin user.
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+    store_location
+    flash[:danger] = "Please log in."
+    redirect_to login_url
+  end
+
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
+
+  # Confirms an admin user.
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeDefaultVoteNumber < ActiveRecord::Migration[5.1]
   def change
     change_column_default :licenceplates, :upvote, 0

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class AppstoreControllerTest < ActionDispatch::IntegrationTest
@@ -5,5 +7,4 @@ class AppstoreControllerTest < ActionDispatch::IntegrationTest
     get appstore_index_url
     assert_response :success
   end
-
 end

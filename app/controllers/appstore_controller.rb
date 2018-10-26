@@ -1,16 +1,16 @@
+# frozen_string_literal: true
+
 class AppstoreController < ApplicationController
-  before_action :admin_user,     only: [:likes,:dislikes]
-  
+  before_action :admin_user, only: %i[likes dislikes]
+
   def index
     @users = User.all
     @kevin = User.first
   end
 
-  def show
-  end
+  def show; end
 
-  def update
-  end
+  def update; end
 
   def upvote
     @kevin = User.first
@@ -51,24 +51,24 @@ class AppstoreController < ApplicationController
   end
 
   private
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
 
-    # Confirms the correct user.
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  # Confirms a logged-in user.
+  def logged_in_user
+    return if logged_in?
 
-    # Confirms an admin user.
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+    store_location
+    flash[:danger] = "Please log in."
+    redirect_to login_url
+  end
 
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
+
+  # Confirms an admin user.
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

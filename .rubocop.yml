@@ -5,3 +5,7 @@ Style/MixinUsage:
   Enabled: true
   Exclude: 
     - bin/**/*
+
+AllCops:
+  Excludes:
+    - db/schema.rb

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateLicenceplates < ActiveRecord::Migration[5.1]
   def change
     create_table :licenceplates do |t|
